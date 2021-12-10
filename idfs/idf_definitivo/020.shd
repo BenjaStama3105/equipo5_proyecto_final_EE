@@ -1,0 +1,494 @@
+Shadowing Combinations
+..Solar Distribution=FullExterior
+..In the following, only the first 10 reference surfaces will be shown.
+..But all surfaces are used in the calculations.
+==================================
+Surface=PANELCUB5 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=3
+..Surface=PANELCUB6
+..Surface=PANELCUB7
+..Surface=SURFACE 23
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-PANELCUB5 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=PANELCUB6
+..Surface=PANELCUB7
+..Surface=SURFACE 23
+..Surface=SURFACE 30
+..Surface=SURFACE 36
+..Surface=SURFACE 12
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PANELCUB6 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=PANELCUB5
+..Surface=Mir-PANELCUB5
+..Surface=SURFACE 23
+..Surface=SURFACE 30
+..Surface=SURFACE 36
+..Surface=SURFACE 12
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-PANELCUB6 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=5
+..Surface=PANELCUB7
+..Surface=SURFACE 23
+..Surface=SURFACE 30
+..Surface=SURFACE 36
+..Surface=SURFACE 12
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PANELCUB7 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=7
+..Surface=PANELCUB5
+..Surface=Mir-PANELCUB5
+..Surface=Mir-PANELCUB6
+..Surface=SURFACE 23
+..Surface=SURFACE 30
+..Surface=SURFACE 36
+..Surface=SURFACE 12
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-PANELCUB7 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=SURFACE 23
+..Surface=SURFACE 30
+..Surface=SURFACE 36
+..Surface=SURFACE 12
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PAREDCUB5ESTE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PAREDCUB5NORTE is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=SURFACE 23
+..Surface=SURFACE 45
+..Surface=SURFACE 47
+..Surface=SURFACE 46
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=VENTANACUB5NORTE
+==================================
+Surface=VENTANACUB5NORTE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PAREDCUB5OESTE is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PAREDCUB5SUR is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=7
+..Surface=Mir-PANELCUB5
+..Surface=Mir-PANELCUB6
+..Surface=Mir-PANELCUB7
+..Surface=SURFACE 23
+..Surface=SURFACE 25
+..Surface=SURFACE 31
+..Surface=SURFACE 7
+Number of back surfaces=0
+Number of receiving sub surfaces=2
+....Surface=PUERTACUB5
+....Surface=VENTANACUB5SUR
+==================================
+Surface=PUERTACUB5 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=VENTANACUB5SUR is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 2 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 44 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=TZCUB5 COLUMNAS is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PAREDCUB6ESTE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PAREDCUB6NORTE is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=SURFACE 23
+..Surface=SURFACE 45
+..Surface=SURFACE 47
+..Surface=SURFACE 46
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=VENTANACUB6NORTE
+==================================
+Surface=VENTANACUB6NORTE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PAREDCUB6OESTE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PAREDCUB6SUR is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=7
+..Surface=Mir-PANELCUB5
+..Surface=Mir-PANELCUB6
+..Surface=Mir-PANELCUB7
+..Surface=SURFACE 23
+..Surface=SURFACE 25
+..Surface=SURFACE 31
+..Surface=SURFACE 7
+Number of back surfaces=0
+Number of receiving sub surfaces=2
+....Surface=PUERTACUB6
+....Surface=VENTANACUB6SUR
+==================================
+Surface=PUERTACUB6 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=VENTANACUB6SUR is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 19 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 40 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=TZCUB6 COLUMNAS is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PAREDCUB7ESTE is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=SURFACE 23
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PAREDCUB7NORTE is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=SURFACE 23
+..Surface=SURFACE 45
+..Surface=SURFACE 47
+..Surface=SURFACE 46
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=VENTANACUB7NORTE
+==================================
+Surface=VENTANACUB7NORTE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PAREDCUB7OESTE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PAREDCUB7SUR is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=7
+..Surface=Mir-PANELCUB5
+..Surface=Mir-PANELCUB6
+..Surface=Mir-PANELCUB7
+..Surface=SURFACE 23
+..Surface=SURFACE 25
+..Surface=SURFACE 31
+..Surface=SURFACE 7
+Number of back surfaces=0
+Number of receiving sub surfaces=2
+....Surface=PUERTACUB7SUR
+....Surface=VENTCUB7SUR
+==================================
+Surface=PUERTACUB7SUR is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=VENTCUB7SUR is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 1 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 15 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=TZCUB7 COLUMNAS is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 17 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 18 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 21 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 23 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=29
+..Surface=PANELCUB5
+..Surface=Mir-PANELCUB5
+..Surface=PANELCUB6
+..Surface=Mir-PANELCUB6
+..Surface=PANELCUB7
+..Surface=Mir-PANELCUB7
+..Surface=PAREDCUB5NORTE
+..Surface=PAREDCUB5SUR
+..Surface=PAREDCUB6NORTE
+..Surface=PAREDCUB6SUR
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 6 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 24 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=REGTECHOCUB5NORTE is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=SURFACE 23
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=VENTANATECHOCUB5NORTE
+==================================
+Surface=VENTANATECHOCUB5NORTE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=REGTECHOCUB5SUR is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=SURFACE 23
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 27 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 29 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 25 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=PAREDCUB5SUR
+..Surface=PAREDCUB6SUR
+..Surface=PAREDCUB7SUR
+..Surface=SURFACE 23
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=VENTANATECHOCUB5SUR
+==================================
+Surface=VENTANATECHOCUB5SUR is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 45 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=SURFACE 23
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 49 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 30 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=Mir-PANELCUB5
+..Surface=PANELCUB6
+..Surface=Mir-PANELCUB6
+..Surface=PANELCUB7
+..Surface=Mir-PANELCUB7
+..Surface=SURFACE 23
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=REGTECHOCUB6NORTE is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=SURFACE 23
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=VENTANATECHOCUB6NORTE
+==================================
+Surface=VENTANATECHOCUB6NORTE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=REGTECHOCUB6SUR is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=SURFACE 23
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 33 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 35 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 31 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=PAREDCUB5SUR
+..Surface=PAREDCUB6SUR
+..Surface=PAREDCUB7SUR
+..Surface=SURFACE 23
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=VENTANATECHOCUB6SUR
+==================================
+Surface=VENTANATECHOCUB6SUR is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 47 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=SURFACE 23
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 50 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 36 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=Mir-PANELCUB5
+..Surface=PANELCUB6
+..Surface=Mir-PANELCUB6
+..Surface=PANELCUB7
+..Surface=Mir-PANELCUB7
+..Surface=SURFACE 23
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=REGTECHOCUB7NORTE is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=SURFACE 23
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=VENTANATECHOCUB7NORTE
+==================================
+Surface=VENTANATECHOCUB7NORTE is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=REGTECHOCUB7SUR is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=SURFACE 23
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 11 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=SURFACE 23
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 9 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 46 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=SURFACE 23
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 48 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 7 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=4
+..Surface=PAREDCUB5SUR
+..Surface=PAREDCUB6SUR
+..Surface=PAREDCUB7SUR
+..Surface=SURFACE 23
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=VENTANATECHOCUB7SUR
+==================================
+Surface=VENTANATECHOCUB7SUR is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SURFACE 12 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=6
+..Surface=Mir-PANELCUB5
+..Surface=PANELCUB6
+..Surface=Mir-PANELCUB6
+..Surface=PANELCUB7
+..Surface=Mir-PANELCUB7
+..Surface=SURFACE 23
+Number of back surfaces=0
+Number of receiving sub surfaces=0
