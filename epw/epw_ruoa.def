@@ -1,0 +1,30 @@
+&location
+City='Temixco'
+StateProv='Morelos'
+Country='MEX'
+InLat=18.51
+InLong=-99.14
+InElev=1219
+InTime=-6
+/
+
+&miscdata
+Comments1='Archivo generado a partir de la RUOA y la ESOLMET del IER del 2019 por bsb'
+Comments2='Unicamente valido para el periodo del 3 de mayo de 2019 al 24 de junio de 2009'
+SourceData='ESOLMET/RUOA'
+/
+
+&wthdata
+NumInHour=6
+InputFileType='CUSTOM'
+InFormat='DELIMITED'
+DataElements=year,month,day,hour,minute,drybulb,relhum,atmos_pressure,dirnorrad,difhorrad,windspd,winddir
+DataUnits=x,x,x,x,x,'C','%','Pa','Wh/m2','Wh/m2','m/s','degree'
+DataConversionFactors=1,1,1,1,1,1,1,1,1,1,1,1
+DelimiterChar=','
+/
+
+&datacontrol
+NumRecordsToSkip=0
+MaxNumRecordsToRead=7633
+/
