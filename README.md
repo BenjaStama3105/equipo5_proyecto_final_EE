@@ -1,9 +1,9 @@
 # equipo5_proyecto_final_EE
 Este repositorio contiene el proyecto final del equipo 5 de la clase de Energía en Edificaciones 2022-1 del IER-UNAM
 
-Los integrantes son:
-Arjona de la Cruz Verónica Monserrat
-Bermejo García Gerardo
+Los integrantes son: \n
+Arjona de la Cruz Verónica Monserrat \n
+Bermejo García Gerardo \n
 Santamaría Beltrán Benjamín
 
 La organización es de la siguiente manera
