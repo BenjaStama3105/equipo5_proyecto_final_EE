@@ -1,0 +1,272 @@
+
+ Meters for 7,TZCUB5:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZCUB5 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:TZCUB5 [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+
+ Meters for 80,TZCUB5:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZCUB5 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:TZCUB5 [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+
+ Meters for 117,TZCUB6:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZCUB6 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:TZCUB6 [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+
+ Meters for 142,TZCUB6:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZCUB6 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:TZCUB6 [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+
+ Meters for 155,TZCUB7:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZCUB7 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:TZCUB7 [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+
+ Meters for 180,TZCUB7:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZCUB7 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:TZCUB7 [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+
+ Meters for 193,TZLABORATORIOS:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZLABORATORIOS [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:TZLABORATORIOS [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+
+ Meters for 218,TZLABORATORIOS:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZLABORATORIOS [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:TZLABORATORIOS [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+
+ Meters for 231,TZTECHOCUB5:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZTECHOCUB5 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:TZTECHOCUB5 [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+
+ Meters for 256,TZTECHOCUB5:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZTECHOCUB5 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:TZTECHOCUB5 [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+
+ Meters for 269,TZTECHOCUB6:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZTECHOCUB6 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:TZTECHOCUB6 [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+
+ Meters for 294,TZTECHOCUB6:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZTECHOCUB6 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:TZTECHOCUB6 [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+
+ Meters for 307,TZTECHOCUB7:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZTECHOCUB7 [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:TZTECHOCUB7 [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+
+ Meters for 332,TZTECHOCUB7:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZTECHOCUB7 [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:TZTECHOCUB7 [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+
+ Meters for 345,Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass [kg]
+  OnMeter=Carbon Equivalent:Facility [kg]
+  OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
+
+ Meters for 370,Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass [kg]
+  OnMeter=Carbon Equivalent:Facility [kg]
+  OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
+
+ Meters for 371,Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass [kg]
+  OnMeter=Carbon Equivalent:Facility [kg]
+  OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
+
+ For Meter=EnergyTransfer:Facility [J], ResourceType=EnergyTransfer, contents are:
+  TZCUB5:Zone Air System Sensible Heating Energy
+  TZCUB5:Zone Air System Sensible Cooling Energy
+  TZCUB6:Zone Air System Sensible Heating Energy
+  TZCUB6:Zone Air System Sensible Cooling Energy
+  TZCUB7:Zone Air System Sensible Heating Energy
+  TZCUB7:Zone Air System Sensible Cooling Energy
+  TZLABORATORIOS:Zone Air System Sensible Heating Energy
+  TZLABORATORIOS:Zone Air System Sensible Cooling Energy
+  TZTECHOCUB5:Zone Air System Sensible Heating Energy
+  TZTECHOCUB5:Zone Air System Sensible Cooling Energy
+  TZTECHOCUB6:Zone Air System Sensible Heating Energy
+  TZTECHOCUB6:Zone Air System Sensible Cooling Energy
+  TZTECHOCUB7:Zone Air System Sensible Heating Energy
+  TZTECHOCUB7:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Building [J], ResourceType=EnergyTransfer, Group=Building, contents are:
+  TZCUB5:Zone Air System Sensible Heating Energy
+  TZCUB5:Zone Air System Sensible Cooling Energy
+  TZCUB6:Zone Air System Sensible Heating Energy
+  TZCUB6:Zone Air System Sensible Cooling Energy
+  TZCUB7:Zone Air System Sensible Heating Energy
+  TZCUB7:Zone Air System Sensible Cooling Energy
+  TZLABORATORIOS:Zone Air System Sensible Heating Energy
+  TZLABORATORIOS:Zone Air System Sensible Cooling Energy
+  TZTECHOCUB5:Zone Air System Sensible Heating Energy
+  TZTECHOCUB5:Zone Air System Sensible Cooling Energy
+  TZTECHOCUB6:Zone Air System Sensible Heating Energy
+  TZTECHOCUB6:Zone Air System Sensible Cooling Energy
+  TZTECHOCUB7:Zone Air System Sensible Heating Energy
+  TZTECHOCUB7:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:TZCUB5 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  TZCUB5:Zone Air System Sensible Heating Energy
+  TZCUB5:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Heating, contents are:
+  TZCUB5:Zone Air System Sensible Heating Energy
+  TZCUB6:Zone Air System Sensible Heating Energy
+  TZCUB7:Zone Air System Sensible Heating Energy
+  TZLABORATORIOS:Zone Air System Sensible Heating Energy
+  TZTECHOCUB5:Zone Air System Sensible Heating Energy
+  TZTECHOCUB6:Zone Air System Sensible Heating Energy
+  TZTECHOCUB7:Zone Air System Sensible Heating Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:TZCUB5 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  TZCUB5:Zone Air System Sensible Heating Energy
+
+ For Meter=General:Heating:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Heating, contents are:
+  TZCUB5:Zone Air System Sensible Heating Energy
+  TZCUB6:Zone Air System Sensible Heating Energy
+  TZCUB7:Zone Air System Sensible Heating Energy
+  TZLABORATORIOS:Zone Air System Sensible Heating Energy
+  TZTECHOCUB5:Zone Air System Sensible Heating Energy
+  TZTECHOCUB6:Zone Air System Sensible Heating Energy
+  TZTECHOCUB7:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Cooling, contents are:
+  TZCUB5:Zone Air System Sensible Cooling Energy
+  TZCUB6:Zone Air System Sensible Cooling Energy
+  TZCUB7:Zone Air System Sensible Cooling Energy
+  TZLABORATORIOS:Zone Air System Sensible Cooling Energy
+  TZTECHOCUB5:Zone Air System Sensible Cooling Energy
+  TZTECHOCUB6:Zone Air System Sensible Cooling Energy
+  TZTECHOCUB7:Zone Air System Sensible Cooling Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:TZCUB5 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  TZCUB5:Zone Air System Sensible Cooling Energy
+
+ For Meter=General:Cooling:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Cooling, contents are:
+  TZCUB5:Zone Air System Sensible Cooling Energy
+  TZCUB6:Zone Air System Sensible Cooling Energy
+  TZCUB7:Zone Air System Sensible Cooling Energy
+  TZLABORATORIOS:Zone Air System Sensible Cooling Energy
+  TZTECHOCUB5:Zone Air System Sensible Cooling Energy
+  TZTECHOCUB6:Zone Air System Sensible Cooling Energy
+  TZTECHOCUB7:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:TZCUB6 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  TZCUB6:Zone Air System Sensible Heating Energy
+  TZCUB6:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:TZCUB6 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  TZCUB6:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:TZCUB6 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  TZCUB6:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:TZCUB7 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  TZCUB7:Zone Air System Sensible Heating Energy
+  TZCUB7:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:TZCUB7 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  TZCUB7:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:TZCUB7 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  TZCUB7:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:TZLABORATORIOS [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  TZLABORATORIOS:Zone Air System Sensible Heating Energy
+  TZLABORATORIOS:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:TZLABORATORIOS [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  TZLABORATORIOS:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:TZLABORATORIOS [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  TZLABORATORIOS:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:TZTECHOCUB5 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  TZTECHOCUB5:Zone Air System Sensible Heating Energy
+  TZTECHOCUB5:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:TZTECHOCUB5 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  TZTECHOCUB5:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:TZTECHOCUB5 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  TZTECHOCUB5:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:TZTECHOCUB6 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  TZTECHOCUB6:Zone Air System Sensible Heating Energy
+  TZTECHOCUB6:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:TZTECHOCUB6 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  TZTECHOCUB6:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:TZTECHOCUB6 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  TZTECHOCUB6:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:TZTECHOCUB7 [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  TZTECHOCUB7:Zone Air System Sensible Heating Energy
+  TZTECHOCUB7:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:TZTECHOCUB7 [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  TZTECHOCUB7:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:TZTECHOCUB7 [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  TZTECHOCUB7:Zone Air System Sensible Cooling Energy
+
+ For Meter=Carbon Equivalent:Facility [kg], ResourceType=Carbon Equivalent, contents are:
+  Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass
+
+ For Meter=CarbonEquivalentEmissions:Carbon Equivalent [kg], ResourceType=Carbon Equivalent, EndUse=CarbonEquivalentEmissions, contents are:
+  Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass
