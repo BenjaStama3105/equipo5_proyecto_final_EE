@@ -1,0 +1,2319 @@
+!-Generator IDFEditor 1.51
+!-Option SortedOrder
+
+!-NOTE: All comments with '!-' are ignored by the IDFEditor and are generated automatically.
+!-      Use '!' comments if they need to be retained when using the IDFEditor.
+
+
+!-   ===========  ALL OBJECTS IN CLASS: VERSION ===========
+
+Version,
+    9.5;                     !- Version Identifier
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SIMULATIONCONTROL ===========
+
+SimulationControl,
+    No,                      !- Do Zone Sizing Calculation
+    No,                      !- Do System Sizing Calculation
+    No,                      !- Do Plant Sizing Calculation
+    No,                      !- Run Simulation for Sizing Periods
+    Yes,                     !- Run Simulation for Weather File Run Periods
+    No,                      !- Do HVAC Sizing Simulation for Sizing Periods
+    1;                       !- Maximum Number of HVAC Sizing Simulation Passes
+
+
+!-   ===========  ALL OBJECTS IN CLASS: BUILDING ===========
+
+Building,
+    Building 1,              !- Name
+    ,                        !- North Axis {deg}
+    ,                        !- Terrain
+    ,                        !- Loads Convergence Tolerance Value {W}
+    ,                        !- Temperature Convergence Tolerance Value {deltaC}
+    ,                        !- Solar Distribution
+    ,                        !- Maximum Number of Warmup Days
+    ;                        !- Minimum Number of Warmup Days
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SHADOWCALCULATION ===========
+
+ShadowCalculation,
+    PolygonClipping,         !- Shading Calculation Method
+    Periodic,                !- Shading Calculation Update Frequency Method
+    20,                      !- Shading Calculation Update Frequency
+    15000,                   !- Maximum Figures in Shadow Overlap Calculations
+    SutherlandHodgman;       !- Polygon Clipping Algorithm
+
+
+!-   ===========  ALL OBJECTS IN CLASS: HEATBALANCEALGORITHM ===========
+
+HeatBalanceAlgorithm,
+    ConductionTransferFunction,  !- Algorithm
+    200;                     !- Surface Temperature Upper Limit {C}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: TIMESTEP ===========
+
+Timestep,
+    6;                       !- Number of Timesteps per Hour
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SITE:LOCATION ===========
+
+Site:Location,
+    Temixco,                 !- Name
+    18.51,                   !- Latitude {deg}
+    -99.14,                  !- Longitude {deg}
+    -6,                      !- Time Zone {hr}
+    1219;                    !- Elevation {m}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: RUNPERIOD ===========
+
+RunPeriod,
+    Run Period 1,            !- Name
+    5,                       !- Begin Month
+    3,                       !- Begin Day of Month
+    2019,                    !- Begin Year
+    6,                       !- End Month
+    25,                      !- End Day of Month
+    2019,                    !- End Year
+    Friday,                  !- Day of Week for Start Day
+    No,                      !- Use Weather File Holidays and Special Days
+    No,                      !- Use Weather File Daylight Saving Period
+    No,                      !- Apply Weekend Holiday Rule
+    Yes,                     !- Use Weather File Rain Indicators
+    Yes;                     !- Use Weather File Snow Indicators
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SITE:WEATHERSTATION ===========
+
+Site:WeatherStation,
+    10,                      !- Wind Sensor Height Above Ground {m}
+    0.14,                    !- Wind Speed Profile Exponent
+    270,                     !- Wind Speed Profile Boundary Layer Thickness {m}
+    1.5;                     !- Air Temperature Sensor Height Above Ground {m}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SITE:HEIGHTVARIATION ===========
+
+Site:HeightVariation,
+    0.14,                    !- Wind Speed Profile Exponent
+    270,                     !- Wind Speed Profile Boundary Layer Thickness {m}
+    0.0065;                  !- Air Temperature Gradient Coefficient {K/m}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SITE:GROUNDTEMPERATURE:BUILDINGSURFACE ===========
+
+Site:GroundTemperature:BuildingSurface,
+    21,                      !- January Ground Temperature {C}
+    21,                      !- February Ground Temperature {C}
+    21,                      !- March Ground Temperature {C}
+    21,                      !- April Ground Temperature {C}
+    21,                      !- May Ground Temperature {C}
+    21,                      !- June Ground Temperature {C}
+    21,                      !- July Ground Temperature {C}
+    21,                      !- August Ground Temperature {C}
+    21,                      !- September Ground Temperature {C}
+    21,                      !- October Ground Temperature {C}
+    21,                      !- November Ground Temperature {C}
+    21;                      !- December Ground Temperature {C}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SCHEDULETYPELIMITS ===========
+
+ScheduleTypeLimits,
+    Equipos,                 !- Name
+    ,                        !- Lower Limit Value
+    ,                        !- Upper Limit Value
+    Discrete,                !- Numeric Type
+    Percent;                 !- Unit Type
+
+ScheduleTypeLimits,
+    Persona,                 !- Name
+    ,                        !- Lower Limit Value
+    ,                        !- Upper Limit Value
+    Discrete,                !- Numeric Type
+    Percent;                 !- Unit Type
+
+ScheduleTypeLimits,
+    Activity,                !- Name
+    ,                        !- Lower Limit Value
+    ,                        !- Upper Limit Value
+    Discrete,                !- Numeric Type
+    ActivityLevel;           !- Unit Type
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SCHEDULE:COMPACT ===========
+
+Schedule:Compact,
+    horarioequipo1,          !- Name
+    Equipos,                 !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: Weekdays,           !- Field 2
+    Until:9:00,              !- Field 3
+    .1566,                   !- Field 4
+    Until:18:00,             !- Field 5
+    1,                       !- Field 6
+    Until:24:00,             !- Field 7
+    .1566,                   !- Field 8
+    For:AllOtherDays,        !- Field 9
+    Until:24:00,             !- Field 10
+     .3;                     !- Field 11
+
+Schedule:Compact,
+    horarioequipo2,          !- Name
+    Equipos,                 !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: Weekdays,           !- Field 2
+    Until:9:00,              !- Field 3
+    .2831,                   !- Field 4
+    Until:18:00,             !- Field 5
+    1,                       !- Field 6
+    Until:24:00,             !- Field 7
+    .2831,                   !- Field 8
+    For:Allotherdays,        !- Field 9
+    Until:24:00,             !- Field 10
+     .4;                     !- Field 11
+
+Schedule:Compact,
+    horarioequipo3,          !- Name
+    Equipos,                 !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: AllDays,            !- Field 2
+    Until:24:00,             !- Field 3
+    1;                       !- Field 4
+
+Schedule:Compact,
+    horarioequipo4,          !- Name
+    Equipos,                 !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: Weekdays,           !- Field 2
+    Until:9:00,              !- Field 3
+    .0465,                   !- Field 4
+    Until:18:00,             !- Field 5
+    1,                       !- Field 6
+    Until:24:00,             !- Field 7
+    .0465,                   !- Field 8
+    For:AllOtherdays,        !- Field 9
+    Until:24:00,             !- Field 10
+     .1;                     !- Field 11
+
+Schedule:Compact,
+    jorge,                   !- Name
+    Persona,                 !- Schedule Type Limits Name
+    Through:12/31,           !- Field 1
+    For: Weekdays,           !- Field 2
+    Until:9:00,              !- Field 3
+    0,                       !- Field 4
+    Until:18:00,             !- Field 5
+    1,                       !- Field 6
+    Until:24:00,             !- Field 7
+    0,                       !- Field 8
+    For: AllOtherDays,       !- Field 9
+    Until:24:00,             !- Field 10
+    0;                       !- Field 11
+
+Schedule:Compact,
+    actividad,               !- Name
+    Activity,                !- Schedule Type Limits Name
+    Through:12/31,           !- Field 1
+    For:Weekdays,            !- Field 2
+    Until:9:00,              !- Field 3
+    72,                      !- Field 4
+    Until:17:00,             !- Field 5
+    117,                     !- Field 6
+    Until:18:00,             !- Field 7
+    108,                     !- Field 8
+    Until:24:00,             !- Field 9
+    72,                      !- Field 10
+    For: AllOtherDay,        !- Field 11
+    Until:24:00,             !- Field 12
+    72;                      !- Field 13
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SCHEDULE:CONSTANT ===========
+
+Schedule:Constant,
+    Continuo,                !- Name
+    Equipos,                 !- Schedule Type Limits Name
+    0;                       !- Hourly Value
+
+
+!-   ===========  ALL OBJECTS IN CLASS: MATERIAL ===========
+
+Material,
+    Tabique,                 !- Name
+    MediumRough,             !- Roughness
+    0.14,                    !- Thickness {m}
+    0.7,                     !- Conductivity {W/m-K}
+    1970,                    !- Density {kg/m3}
+    800,                     !- Specific Heat {J/kg-K}
+    0.9,                     !- Thermal Absorptance
+    0.65,                    !- Solar Absorptance
+    0.65;                    !- Visible Absorptance
+
+Material,
+    CAD,                     !- Name
+    Rough,                   !- Roughness
+    0.1,                     !- Thickness {m}
+    2,                       !- Conductivity {W/m-K}
+    2400,                    !- Density {kg/m3}
+    1000,                    !- Specific Heat {J/kg-K}
+    0.9,                     !- Thermal Absorptance
+    0.6,                     !- Solar Absorptance
+    0.6;                     !- Visible Absorptance
+
+Material,
+    MorteroAltaDensidad,     !- Name
+    Rough,                   !- Roughness
+    0.1,                     !- Thickness {m}
+    0.88,                    !- Conductivity {W/m-K}
+    2800,                    !- Density {kg/m3}
+    896,                     !- Specific Heat {J/kg-K}
+    0.9,                     !- Thermal Absorptance
+    0.2,                     !- Solar Absorptance
+    0.2;                     !- Visible Absorptance
+
+
+!-   ===========  ALL OBJECTS IN CLASS: WINDOWMATERIAL:GLAZING ===========
+
+WindowMaterial:Glazing,
+    Clear 3mm,               !- Name
+    SpectralAverage,         !- Optical Data Type
+    ,                        !- Window Glass Spectral Data Set Name
+    0.00299999999999999,     !- Thickness {m}
+    0.837,                   !- Solar Transmittance at Normal Incidence
+    0.075,                   !- Front Side Solar Reflectance at Normal Incidence
+    0,                       !- Back Side Solar Reflectance at Normal Incidence
+    0.898,                   !- Visible Transmittance at Normal Incidence
+    0.081,                   !- Front Side Visible Reflectance at Normal Incidence
+    0,                       !- Back Side Visible Reflectance at Normal Incidence
+    0,                       !- Infrared Transmittance at Normal Incidence
+    0.84,                    !- Front Side Infrared Hemispherical Emissivity
+    0.84,                    !- Back Side Infrared Hemispherical Emissivity
+    0.9,                     !- Conductivity {W/m-K}
+    1,                       !- Dirt Correction Factor for Solar and Visible Transmittance
+    No;                      !- Solar Diffusing
+
+
+!-   ===========  ALL OBJECTS IN CLASS: WINDOWMATERIAL:BLIND ===========
+
+WindowMaterial:Blind,
+    Window Material Blind 1, !- Name
+    Horizontal,              !- Slat Orientation
+    0.025,                   !- Slat Width {m}
+    0.01875,                 !- Slat Separation {m}
+    0.001,                   !- Slat Thickness {m}
+    45,                      !- Slat Angle {deg}
+    221,                     !- Slat Conductivity {W/m-K}
+    0,                       !- Slat Beam Solar Transmittance
+    0.5,                     !- Front Side Slat Beam Solar Reflectance
+    0.5,                     !- Back Side Slat Beam Solar Reflectance
+    0,                       !- Slat Diffuse Solar Transmittance
+    0.5,                     !- Front Side Slat Diffuse Solar Reflectance
+    0.5,                     !- Back Side Slat Diffuse Solar Reflectance
+    0,                       !- Slat Beam Visible Transmittance
+    0.5,                     !- Front Side Slat Beam Visible Reflectance
+    0.5,                     !- Back Side Slat Beam Visible Reflectance
+    0,                       !- Slat Diffuse Visible Transmittance
+    0.5,                     !- Front Side Slat Diffuse Visible Reflectance
+    0.5,                     !- Back Side Slat Diffuse Visible Reflectance
+    0,                       !- Slat Infrared Hemispherical Transmittance
+    0.9,                     !- Front Side Slat Infrared Hemispherical Emissivity
+    0.9,                     !- Back Side Slat Infrared Hemispherical Emissivity
+    0.05,                    !- Blind to Glass Distance {m}
+    0.5,                     !- Blind Top Opening Multiplier
+    0.5,                     !- Blind Bottom Opening Multiplier
+    0.5,                     !- Blind Left Side Opening Multiplier
+    0.5,                     !- Blind Right Side Opening Multiplier
+    0,                       !- Minimum Slat Angle {deg}
+    180;                     !- Maximum Slat Angle {deg}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: CONSTRUCTION ===========
+
+Construction,
+    Interior Window,         !- Name
+    Clear 3mm;               !- Outside Layer
+
+Construction,
+    Tabique,                 !- Name
+    Tabique;                 !- Outside Layer
+
+Construction,
+    CAD,                     !- Name
+    CAD;                     !- Outside Layer
+
+Construction,
+    Mortero,                 !- Name
+    MorteroAltaDensidad;     !- Outside Layer
+
+
+!-   ===========  ALL OBJECTS IN CLASS: GLOBALGEOMETRYRULES ===========
+
+GlobalGeometryRules,
+    UpperLeftCorner,         !- Starting Vertex Position
+    Counterclockwise,        !- Vertex Entry Direction
+    Relative,                !- Coordinate System
+    Relative,                !- Daylighting Reference Point Coordinate System
+    Relative;                !- Rectangular Surface Coordinate System
+
+
+!-   ===========  ALL OBJECTS IN CLASS: ZONE ===========
+
+Zone,
+    TZCub5,                  !- Name
+    -0,                      !- Direction of Relative North {deg}
+    -5.49630482425276,       !- X Origin {m}
+    11.8954971819012,        !- Y Origin {m}
+    0;                       !- Z Origin {m}
+
+Zone,
+    TZCub6,                  !- Name
+    -0,                      !- Direction of Relative North {deg}
+    1.50369517574724,        !- X Origin {m}
+    5.53549718190122,        !- Y Origin {m}
+    0;                       !- Z Origin {m}
+
+Zone,
+    TZCub7,                  !- Name
+    ,                        !- Direction of Relative North {deg}
+    1.50369517574724,        !- X Origin {m}
+    5.53549718190122,        !- Y Origin {m}
+    0;                       !- Z Origin {m}
+
+Zone,
+    TZLaboratorios,          !- Name
+    -0,                      !- Direction of Relative North {deg}
+    7.00369517574724,        !- X Origin {m}
+    11.8954971819012,        !- Y Origin {m}
+    0;                       !- Z Origin {m}
+
+Zone,
+    TZTechoCub5,             !- Name
+    -0,                      !- Direction of Relative North {deg}
+    -1.99630482425276,       !- X Origin {m}
+    3.53549718190122,        !- Y Origin {m}
+    3;                       !- Z Origin {m}
+
+Zone,
+    TZTechoCub6,             !- Name
+    -0,                      !- Direction of Relative North {deg}
+    -1.99630482425276,       !- X Origin {m}
+    12.5954971819012,        !- Y Origin {m}
+    3;                       !- Z Origin {m}
+
+Zone,
+    TZTechoCub7,             !- Name
+    -0,                      !- Direction of Relative North {deg}
+    5.00369517574724,        !- X Origin {m}
+    3.53549718190122,        !- Y Origin {m}
+    3;                       !- Z Origin {m}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: ZONELIST ===========
+
+ZoneList,
+    189.1-2009 - Office - OpenOffice - CZ4-8,  !- Name
+    TZCub5,                  !- Zone 1 Name
+    TZCub6,                  !- Zone 2 Name
+    TZCub7,                  !- Zone 3 Name
+    TZLaboratorios,          !- Zone 4 Name
+    TZTechoCub5,             !- Zone 5 Name
+    TZTechoCub6,             !- Zone 6 Name
+    TZTechoCub7;             !- Zone 7 Name
+
+ZoneList,
+    Cubs,                    !- Name
+    TZCub7,                  !- Zone 1 Name
+    TZCub6,                  !- Zone 2 Name
+    TZCub5;                  !- Zone 3 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: BUILDINGSURFACE:DETAILED ===========
+
+BuildingSurface:Detailed,
+    ParedCub5Este,           !- Name
+    Wall,                    !- Surface Type
+    Tabique,                 !- Construction Name
+    TZCub5,                  !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    ParedCub6Oeste,          !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    3.5,                     !- Vertex 1 X-coordinate {m}
+    0,                       !- Vertex 1 Y-coordinate {m}
+    3.5,                     !- Vertex 1 Z-coordinate {m}
+    3.5,                     !- Vertex 2 X-coordinate {m}
+    -6.36,                   !- Vertex 2 Y-coordinate {m}
+    3,                       !- Vertex 2 Z-coordinate {m}
+    3.5,                     !- Vertex 3 X-coordinate {m}
+    -6.36,                   !- Vertex 3 Y-coordinate {m}
+    0,                       !- Vertex 3 Z-coordinate {m}
+    3.5,                     !- Vertex 4 X-coordinate {m}
+    0,                       !- Vertex 4 Y-coordinate {m}
+    6.41186143763638e-031;   !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    ParedCub5Norte,          !- Name
+    Wall,                    !- Surface Type
+    Tabique,                 !- Construction Name
+    TZCub5,                  !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    3.5,                     !- Vertex 1 X-coordinate {m}
+    0,                       !- Vertex 1 Y-coordinate {m}
+    3.5,                     !- Vertex 1 Z-coordinate {m}
+    3.5,                     !- Vertex 2 X-coordinate {m}
+    0,                       !- Vertex 2 Y-coordinate {m}
+    6.41186143763638e-031,   !- Vertex 2 Z-coordinate {m}
+    0,                       !- Vertex 3 X-coordinate {m}
+    0,                       !- Vertex 3 Y-coordinate {m}
+    6.41186143763638e-031,   !- Vertex 3 Z-coordinate {m}
+    0,                       !- Vertex 4 X-coordinate {m}
+    0,                       !- Vertex 4 Y-coordinate {m}
+    3.5;                     !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    ParedCub5Oeste,          !- Name
+    Wall,                    !- Surface Type
+    Tabique,                 !- Construction Name
+    TZCub5,                  !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    0,                       !- Vertex 1 Y-coordinate {m}
+    3.5,                     !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    0,                       !- Vertex 2 Y-coordinate {m}
+    6.41186143763638e-031,   !- Vertex 2 Z-coordinate {m}
+    0,                       !- Vertex 3 X-coordinate {m}
+    -6.36,                   !- Vertex 3 Y-coordinate {m}
+    0,                       !- Vertex 3 Z-coordinate {m}
+    0,                       !- Vertex 4 X-coordinate {m}
+    -6.36,                   !- Vertex 4 Y-coordinate {m}
+    3;                       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    ParedCub5Sur,            !- Name
+    Wall,                    !- Surface Type
+    Tabique,                 !- Construction Name
+    TZCub5,                  !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    -6.36,                   !- Vertex 1 Y-coordinate {m}
+    3,                       !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    -6.36,                   !- Vertex 2 Y-coordinate {m}
+    0,                       !- Vertex 2 Z-coordinate {m}
+    3.5,                     !- Vertex 3 X-coordinate {m}
+    -6.36,                   !- Vertex 3 Y-coordinate {m}
+    0,                       !- Vertex 3 Z-coordinate {m}
+    3.5,                     !- Vertex 4 X-coordinate {m}
+    -6.36,                   !- Vertex 4 Y-coordinate {m}
+    3;                       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 2,               !- Name
+    Floor,                   !- Surface Type
+    CAD,                     !- Construction Name
+    TZCub5,                  !- Zone Name
+    Ground,                  !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    3.5,                     !- Vertex 1 X-coordinate {m}
+    0,                       !- Vertex 1 Y-coordinate {m}
+    6.41186143763638e-031,   !- Vertex 1 Z-coordinate {m}
+    3.5,                     !- Vertex 2 X-coordinate {m}
+    -6.36,                   !- Vertex 2 Y-coordinate {m}
+    0,                       !- Vertex 2 Z-coordinate {m}
+    0,                       !- Vertex 3 X-coordinate {m}
+    -6.36,                   !- Vertex 3 Y-coordinate {m}
+    0,                       !- Vertex 3 Z-coordinate {m}
+    0,                       !- Vertex 4 X-coordinate {m}
+    0,                       !- Vertex 4 Y-coordinate {m}
+    6.41186143763638e-031;   !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 44,              !- Name
+    Ceiling,                 !- Surface Type
+    CAD,                     !- Construction Name
+    TZCub5,                  !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    Surface 49,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    3.5,                     !- Vertex 1 X-coordinate {m}
+    -6.36,                   !- Vertex 1 Y-coordinate {m}
+    3,                       !- Vertex 1 Z-coordinate {m}
+    3.5,                     !- Vertex 2 X-coordinate {m}
+    0,                       !- Vertex 2 Y-coordinate {m}
+    3.5,                     !- Vertex 2 Z-coordinate {m}
+    0,                       !- Vertex 3 X-coordinate {m}
+    0,                       !- Vertex 3 Y-coordinate {m}
+    3.5,                     !- Vertex 3 Z-coordinate {m}
+    0,                       !- Vertex 4 X-coordinate {m}
+    -6.36,                   !- Vertex 4 Y-coordinate {m}
+    3;                       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    ParedCub6Este,           !- Name
+    Wall,                    !- Surface Type
+    Tabique,                 !- Construction Name
+    TZCub6,                  !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    ParedCub7Oeste,          !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    6.36,                    !- Vertex 1 Y-coordinate {m}
+    3.5,                     !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    0,                       !- Vertex 2 Y-coordinate {m}
+    3,                       !- Vertex 2 Z-coordinate {m}
+    0,                       !- Vertex 3 X-coordinate {m}
+    0,                       !- Vertex 3 Y-coordinate {m}
+    0,                       !- Vertex 3 Z-coordinate {m}
+    0,                       !- Vertex 4 X-coordinate {m}
+    6.36,                    !- Vertex 4 Y-coordinate {m}
+    1.20222401955682e-031;   !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    ParedCub6Norte,          !- Name
+    Wall,                    !- Surface Type
+    Tabique,                 !- Construction Name
+    TZCub6,                  !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    6.36,                    !- Vertex 1 Y-coordinate {m}
+    3.5,                     !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    6.36,                    !- Vertex 2 Y-coordinate {m}
+    1.20222401955682e-031,   !- Vertex 2 Z-coordinate {m}
+    -3.5,                    !- Vertex 3 X-coordinate {m}
+    6.36,                    !- Vertex 3 Y-coordinate {m}
+    1.20222401955682e-031,   !- Vertex 3 Z-coordinate {m}
+    -3.5,                    !- Vertex 4 X-coordinate {m}
+    6.36,                    !- Vertex 4 Y-coordinate {m}
+    3.5;                     !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    ParedCub6Oeste,          !- Name
+    Wall,                    !- Surface Type
+    Tabique,                 !- Construction Name
+    TZCub6,                  !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    ParedCub5Este,           !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    -3.5,                    !- Vertex 1 X-coordinate {m}
+    6.36,                    !- Vertex 1 Y-coordinate {m}
+    3.5,                     !- Vertex 1 Z-coordinate {m}
+    -3.5,                    !- Vertex 2 X-coordinate {m}
+    6.36,                    !- Vertex 2 Y-coordinate {m}
+    1.20222401955682e-031,   !- Vertex 2 Z-coordinate {m}
+    -3.5,                    !- Vertex 3 X-coordinate {m}
+    0,                       !- Vertex 3 Y-coordinate {m}
+    0,                       !- Vertex 3 Z-coordinate {m}
+    -3.5,                    !- Vertex 4 X-coordinate {m}
+    0,                       !- Vertex 4 Y-coordinate {m}
+    3;                       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    ParedCub6Sur,            !- Name
+    Wall,                    !- Surface Type
+    Tabique,                 !- Construction Name
+    TZCub6,                  !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    -3.5,                    !- Vertex 1 X-coordinate {m}
+    0,                       !- Vertex 1 Y-coordinate {m}
+    3,                       !- Vertex 1 Z-coordinate {m}
+    -3.5,                    !- Vertex 2 X-coordinate {m}
+    0,                       !- Vertex 2 Y-coordinate {m}
+    0,                       !- Vertex 2 Z-coordinate {m}
+    0,                       !- Vertex 3 X-coordinate {m}
+    0,                       !- Vertex 3 Y-coordinate {m}
+    0,                       !- Vertex 3 Z-coordinate {m}
+    0,                       !- Vertex 4 X-coordinate {m}
+    0,                       !- Vertex 4 Y-coordinate {m}
+    3;                       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 19,              !- Name
+    Floor,                   !- Surface Type
+    CAD,                     !- Construction Name
+    TZCub6,                  !- Zone Name
+    Ground,                  !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    6.36,                    !- Vertex 1 Y-coordinate {m}
+    1.20222401955682e-031,   !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    0,                       !- Vertex 2 Y-coordinate {m}
+    0,                       !- Vertex 2 Z-coordinate {m}
+    -3.5,                    !- Vertex 3 X-coordinate {m}
+    0,                       !- Vertex 3 Y-coordinate {m}
+    0,                       !- Vertex 3 Z-coordinate {m}
+    -3.5,                    !- Vertex 4 X-coordinate {m}
+    6.36,                    !- Vertex 4 Y-coordinate {m}
+    1.20222401955682e-031;   !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 40,              !- Name
+    Ceiling,                 !- Surface Type
+    CAD,                     !- Construction Name
+    TZCub6,                  !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    Surface 50,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    0,                       !- Vertex 1 Y-coordinate {m}
+    3,                       !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    6.36,                    !- Vertex 2 Y-coordinate {m}
+    3.5,                     !- Vertex 2 Z-coordinate {m}
+    -3.5,                    !- Vertex 3 X-coordinate {m}
+    6.36,                    !- Vertex 3 Y-coordinate {m}
+    3.5,                     !- Vertex 3 Z-coordinate {m}
+    -3.5,                    !- Vertex 4 X-coordinate {m}
+    0,                       !- Vertex 4 Y-coordinate {m}
+    3;                       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    ParedCub7Este,           !- Name
+    Wall,                    !- Surface Type
+    Tabique,                 !- Construction Name
+    TZCub7,                  !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    3.5,                     !- Vertex 1 X-coordinate {m}
+    6.36,                    !- Vertex 1 Y-coordinate {m}
+    3.5,                     !- Vertex 1 Z-coordinate {m}
+    3.5,                     !- Vertex 2 X-coordinate {m}
+    0,                       !- Vertex 2 Y-coordinate {m}
+    3,                       !- Vertex 2 Z-coordinate {m}
+    3.5,                     !- Vertex 3 X-coordinate {m}
+    0,                       !- Vertex 3 Y-coordinate {m}
+    0,                       !- Vertex 3 Z-coordinate {m}
+    3.5,                     !- Vertex 4 X-coordinate {m}
+    6.36,                    !- Vertex 4 Y-coordinate {m}
+    0;                       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    ParedCub7Norte,          !- Name
+    Wall,                    !- Surface Type
+    Tabique,                 !- Construction Name
+    TZCub7,                  !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    3.5,                     !- Vertex 1 X-coordinate {m}
+    6.36,                    !- Vertex 1 Y-coordinate {m}
+    3.5,                     !- Vertex 1 Z-coordinate {m}
+    3.5,                     !- Vertex 2 X-coordinate {m}
+    6.36,                    !- Vertex 2 Y-coordinate {m}
+    0,                       !- Vertex 2 Z-coordinate {m}
+    0,                       !- Vertex 3 X-coordinate {m}
+    6.36,                    !- Vertex 3 Y-coordinate {m}
+    0,                       !- Vertex 3 Z-coordinate {m}
+    0,                       !- Vertex 4 X-coordinate {m}
+    6.36,                    !- Vertex 4 Y-coordinate {m}
+    3.5;                     !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    ParedCub7Oeste,          !- Name
+    Wall,                    !- Surface Type
+    Tabique,                 !- Construction Name
+    TZCub7,                  !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    ParedCub6Este,           !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    6.36,                    !- Vertex 1 Y-coordinate {m}
+    3.5,                     !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    6.36,                    !- Vertex 2 Y-coordinate {m}
+    0,                       !- Vertex 2 Z-coordinate {m}
+    0,                       !- Vertex 3 X-coordinate {m}
+    0,                       !- Vertex 3 Y-coordinate {m}
+    0,                       !- Vertex 3 Z-coordinate {m}
+    0,                       !- Vertex 4 X-coordinate {m}
+    0,                       !- Vertex 4 Y-coordinate {m}
+    3;                       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    ParedCub7Sur,            !- Name
+    Wall,                    !- Surface Type
+    Tabique,                 !- Construction Name
+    TZCub7,                  !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    0,                       !- Vertex 1 Y-coordinate {m}
+    3,                       !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    0,                       !- Vertex 2 Y-coordinate {m}
+    0,                       !- Vertex 2 Z-coordinate {m}
+    3.5,                     !- Vertex 3 X-coordinate {m}
+    0,                       !- Vertex 3 Y-coordinate {m}
+    0,                       !- Vertex 3 Z-coordinate {m}
+    3.5,                     !- Vertex 4 X-coordinate {m}
+    0,                       !- Vertex 4 Y-coordinate {m}
+    3;                       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 1,               !- Name
+    Floor,                   !- Surface Type
+    CAD,                     !- Construction Name
+    TZCub7,                  !- Zone Name
+    Ground,                  !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    3.5,                     !- Vertex 1 X-coordinate {m}
+    6.36,                    !- Vertex 1 Y-coordinate {m}
+    0,                       !- Vertex 1 Z-coordinate {m}
+    3.5,                     !- Vertex 2 X-coordinate {m}
+    0,                       !- Vertex 2 Y-coordinate {m}
+    0,                       !- Vertex 2 Z-coordinate {m}
+    0,                       !- Vertex 3 X-coordinate {m}
+    0,                       !- Vertex 3 Y-coordinate {m}
+    0,                       !- Vertex 3 Z-coordinate {m}
+    0,                       !- Vertex 4 X-coordinate {m}
+    6.36,                    !- Vertex 4 Y-coordinate {m}
+    0;                       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 15,              !- Name
+    Ceiling,                 !- Surface Type
+    CAD,                     !- Construction Name
+    TZCub7,                  !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    Surface 48,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    3.5,                     !- Vertex 1 X-coordinate {m}
+    0,                       !- Vertex 1 Y-coordinate {m}
+    3,                       !- Vertex 1 Z-coordinate {m}
+    3.5,                     !- Vertex 2 X-coordinate {m}
+    6.36,                    !- Vertex 2 Y-coordinate {m}
+    3.5,                     !- Vertex 2 Z-coordinate {m}
+    0,                       !- Vertex 3 X-coordinate {m}
+    6.36,                    !- Vertex 3 Y-coordinate {m}
+    3.5,                     !- Vertex 3 Z-coordinate {m}
+    0,                       !- Vertex 4 X-coordinate {m}
+    0,                       !- Vertex 4 Y-coordinate {m}
+    3;                       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 17,              !- Name
+    Wall,                    !- Surface Type
+    Tabique,                 !- Construction Name
+    TZLaboratorios,          !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    1.5,                     !- Vertex 1 X-coordinate {m}
+    1.76,                    !- Vertex 1 Y-coordinate {m}
+    4.5,                     !- Vertex 1 Z-coordinate {m}
+    1.5,                     !- Vertex 2 X-coordinate {m}
+    1.76,                    !- Vertex 2 Y-coordinate {m}
+    0,                       !- Vertex 2 Z-coordinate {m}
+    0.5,                     !- Vertex 3 X-coordinate {m}
+    1.76,                    !- Vertex 3 Y-coordinate {m}
+    0,                       !- Vertex 3 Z-coordinate {m}
+    0.5,                     !- Vertex 4 X-coordinate {m}
+    1.76,                    !- Vertex 4 Y-coordinate {m}
+    4.5;                     !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 18,              !- Name
+    Wall,                    !- Surface Type
+    Tabique,                 !- Construction Name
+    TZLaboratorios,          !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    1.5,                     !- Vertex 1 X-coordinate {m}
+    -12.24,                  !- Vertex 1 Y-coordinate {m}
+    4.5,                     !- Vertex 1 Z-coordinate {m}
+    1.5,                     !- Vertex 2 X-coordinate {m}
+    -12.24,                  !- Vertex 2 Y-coordinate {m}
+    0,                       !- Vertex 2 Z-coordinate {m}
+    1.5,                     !- Vertex 3 X-coordinate {m}
+    1.76,                    !- Vertex 3 Y-coordinate {m}
+    0,                       !- Vertex 3 Z-coordinate {m}
+    1.5,                     !- Vertex 4 X-coordinate {m}
+    1.76,                    !- Vertex 4 Y-coordinate {m}
+    4.5;                     !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 21,              !- Name
+    Wall,                    !- Surface Type
+    Tabique,                 !- Construction Name
+    TZLaboratorios,          !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0.5,                     !- Vertex 1 X-coordinate {m}
+    -12.24,                  !- Vertex 1 Y-coordinate {m}
+    4.5,                     !- Vertex 1 Z-coordinate {m}
+    0.5,                     !- Vertex 2 X-coordinate {m}
+    -12.24,                  !- Vertex 2 Y-coordinate {m}
+    0,                       !- Vertex 2 Z-coordinate {m}
+    1.5,                     !- Vertex 3 X-coordinate {m}
+    -12.24,                  !- Vertex 3 Y-coordinate {m}
+    0,                       !- Vertex 3 Z-coordinate {m}
+    1.5,                     !- Vertex 4 X-coordinate {m}
+    -12.24,                  !- Vertex 4 Y-coordinate {m}
+    4.5;                     !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 23,              !- Name
+    Wall,                    !- Surface Type
+    Tabique,                 !- Construction Name
+    TZLaboratorios,          !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0.5,                     !- Vertex 1 X-coordinate {m}
+    1.76,                    !- Vertex 1 Y-coordinate {m}
+    4.5,                     !- Vertex 1 Z-coordinate {m}
+    0.5,                     !- Vertex 2 X-coordinate {m}
+    1.76,                    !- Vertex 2 Y-coordinate {m}
+    0,                       !- Vertex 2 Z-coordinate {m}
+    0.5,                     !- Vertex 3 X-coordinate {m}
+    -12.24,                  !- Vertex 3 Y-coordinate {m}
+    0,                       !- Vertex 3 Z-coordinate {m}
+    0.5,                     !- Vertex 4 X-coordinate {m}
+    -12.24,                  !- Vertex 4 Y-coordinate {m}
+    4.5;                     !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 24,              !- Name
+    Roof,                    !- Surface Type
+    Mortero,                 !- Construction Name
+    TZLaboratorios,          !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    1.5,                     !- Vertex 1 X-coordinate {m}
+    -12.24,                  !- Vertex 1 Y-coordinate {m}
+    4.5,                     !- Vertex 1 Z-coordinate {m}
+    1.5,                     !- Vertex 2 X-coordinate {m}
+    1.76,                    !- Vertex 2 Y-coordinate {m}
+    4.5,                     !- Vertex 2 Z-coordinate {m}
+    0.5,                     !- Vertex 3 X-coordinate {m}
+    1.76,                    !- Vertex 3 Y-coordinate {m}
+    4.5,                     !- Vertex 3 Z-coordinate {m}
+    0.5,                     !- Vertex 4 X-coordinate {m}
+    -12.24,                  !- Vertex 4 Y-coordinate {m}
+    4.5;                     !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 6,               !- Name
+    Floor,                   !- Surface Type
+    CAD,                     !- Construction Name
+    TZLaboratorios,          !- Zone Name
+    Ground,                  !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    1.5,                     !- Vertex 1 X-coordinate {m}
+    1.76,                    !- Vertex 1 Y-coordinate {m}
+    0,                       !- Vertex 1 Z-coordinate {m}
+    1.5,                     !- Vertex 2 X-coordinate {m}
+    -12.24,                  !- Vertex 2 Y-coordinate {m}
+    0,                       !- Vertex 2 Z-coordinate {m}
+    0.5,                     !- Vertex 3 X-coordinate {m}
+    -12.24,                  !- Vertex 3 Y-coordinate {m}
+    0,                       !- Vertex 3 Z-coordinate {m}
+    0.5,                     !- Vertex 4 X-coordinate {m}
+    1.76,                    !- Vertex 4 Y-coordinate {m}
+    0;                       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    RegTechoCub5Norte,       !- Name
+    Wall,                    !- Surface Type
+    Mortero,                 !- Construction Name
+    TZTechoCub5,             !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    9.01477098168031,        !- Vertex 1 Y-coordinate {m}
+    0.852401357680565,       !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    9.03828333983626,        !- Vertex 2 Y-coordinate {m}
+    0.553324161936813,       !- Vertex 2 Z-coordinate {m}
+    -3.5,                    !- Vertex 3 X-coordinate {m}
+    9.03828333983626,        !- Vertex 3 Y-coordinate {m}
+    0.553324161936813,       !- Vertex 3 Z-coordinate {m}
+    -3.5,                    !- Vertex 4 X-coordinate {m}
+    9.01477098168031,        !- Vertex 4 Y-coordinate {m}
+    0.852401357680565;       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    RegTechoCub5Sur,         !- Name
+    Wall,                    !- Surface Type
+    Mortero,                 !- Construction Name
+    TZTechoCub5,             !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    -3.5,                    !- Vertex 1 X-coordinate {m}
+    -0.0173603297809656,     !- Vertex 1 Y-coordinate {m}
+    0.142328141370719,       !- Vertex 1 Z-coordinate {m}
+    -3.5,                    !- Vertex 2 X-coordinate {m}
+    0.00615202837498819,     !- Vertex 2 Y-coordinate {m}
+    -0.156749054373033,      !- Vertex 2 Z-coordinate {m}
+    0,                       !- Vertex 3 X-coordinate {m}
+    0.00615202837498819,     !- Vertex 3 Y-coordinate {m}
+    -0.156749054373033,      !- Vertex 3 Z-coordinate {m}
+    0,                       !- Vertex 4 X-coordinate {m}
+    -0.0173603297809656,     !- Vertex 4 Y-coordinate {m}
+    0.142328141370719;       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 25,              !- Name
+    Floor,                   !- Surface Type
+    CAD,                     !- Construction Name
+    TZTechoCub5,             !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    -3.60955709766131e-016,  !- Vertex 1 X-coordinate {m}
+    2,                       !- Vertex 1 Y-coordinate {m}
+    6.97200471958551e-016,   !- Vertex 1 Z-coordinate {m}
+    -1.14301277988756e-031,  !- Vertex 2 X-coordinate {m}
+    0.00615202837498825,     !- Vertex 2 Y-coordinate {m}
+    -0.156749054373033,      !- Vertex 2 Z-coordinate {m}
+    -3.5,                    !- Vertex 3 X-coordinate {m}
+    0.00615202837498814,     !- Vertex 3 Y-coordinate {m}
+    -0.156749054373033,      !- Vertex 3 Z-coordinate {m}
+    -3.5,                    !- Vertex 4 X-coordinate {m}
+    1.99999999999998,        !- Vertex 4 Y-coordinate {m}
+    -6.74710134153436e-016;  !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 27,              !- Name
+    Wall,                    !- Surface Type
+    Mortero,                 !- Construction Name
+    TZTechoCub5,             !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    -3.5,                    !- Vertex 1 X-coordinate {m}
+    9.01477098168031,        !- Vertex 1 Y-coordinate {m}
+    0.852401357680565,       !- Vertex 1 Z-coordinate {m}
+    -3.5,                    !- Vertex 2 X-coordinate {m}
+    9.03828333983626,        !- Vertex 2 Y-coordinate {m}
+    0.553324161936813,       !- Vertex 2 Z-coordinate {m}
+    -3.5,                    !- Vertex 3 X-coordinate {m}
+    0.00615202837498819,     !- Vertex 3 Y-coordinate {m}
+    -0.156749054373033,      !- Vertex 3 Z-coordinate {m}
+    -3.5,                    !- Vertex 4 X-coordinate {m}
+    -0.0173603297809656,     !- Vertex 4 Y-coordinate {m}
+    0.142328141370719;       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 29,              !- Name
+    Wall,                    !- Surface Type
+    Mortero,                 !- Construction Name
+    TZTechoCub5,             !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    Surface 35,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    9.01477098168031,        !- Vertex 1 Y-coordinate {m}
+    0.852401357680565,       !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    -0.0173603297809656,     !- Vertex 2 Y-coordinate {m}
+    0.142328141370719,       !- Vertex 2 Z-coordinate {m}
+    0,                       !- Vertex 3 X-coordinate {m}
+    0.00615202837498819,     !- Vertex 3 Y-coordinate {m}
+    -0.156749054373033,      !- Vertex 3 Z-coordinate {m}
+    0,                       !- Vertex 4 X-coordinate {m}
+    9.03828333983626,        !- Vertex 4 Y-coordinate {m}
+    0.553324161936813;       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 30,              !- Name
+    Roof,                    !- Surface Type
+    Mortero,                 !- Construction Name
+    TZTechoCub5,             !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    -0.0173603297809656,     !- Vertex 1 Y-coordinate {m}
+    0.142328141370719,       !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    9.01477098168031,        !- Vertex 2 Y-coordinate {m}
+    0.852401357680565,       !- Vertex 2 Z-coordinate {m}
+    -3.5,                    !- Vertex 3 X-coordinate {m}
+    9.01477098168031,        !- Vertex 3 Y-coordinate {m}
+    0.852401357680565,       !- Vertex 3 Z-coordinate {m}
+    -3.5,                    !- Vertex 4 X-coordinate {m}
+    -0.0173603297809656,     !- Vertex 4 Y-coordinate {m}
+    0.142328141370719;       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 45,              !- Name
+    Floor,                   !- Surface Type
+    CAD,                     !- Construction Name
+    TZTechoCub5,             !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    -9.11437548424291e-031,  !- Vertex 1 X-coordinate {m}
+    9.03828333983626,        !- Vertex 1 Y-coordinate {m}
+    0.553324161936813,       !- Vertex 1 Z-coordinate {m}
+    -3.60955709766131e-016,  !- Vertex 2 X-coordinate {m}
+    8.36,                    !- Vertex 2 Y-coordinate {m}
+    0.5,                     !- Vertex 2 Z-coordinate {m}
+    -3.5,                    !- Vertex 3 X-coordinate {m}
+    8.35999999999998,        !- Vertex 3 Y-coordinate {m}
+    0.5,                     !- Vertex 3 Z-coordinate {m}
+    -3.5,                    !- Vertex 4 X-coordinate {m}
+    9.03828333983626,        !- Vertex 4 Y-coordinate {m}
+    0.553324161936813;       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 49,              !- Name
+    Floor,                   !- Surface Type
+    CAD,                     !- Construction Name
+    TZTechoCub5,             !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    Surface 44,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    -3.60955709766131e-016,  !- Vertex 1 X-coordinate {m}
+    8.36,                    !- Vertex 1 Y-coordinate {m}
+    0.5,                     !- Vertex 1 Z-coordinate {m}
+    -3.60955709766131e-016,  !- Vertex 2 X-coordinate {m}
+    2,                       !- Vertex 2 Y-coordinate {m}
+    1.79922702440917e-016,   !- Vertex 2 Z-coordinate {m}
+    -3.5,                    !- Vertex 3 X-coordinate {m}
+    1.99999999999998,        !- Vertex 3 Y-coordinate {m}
+    4.49806756102291e-017,   !- Vertex 3 Z-coordinate {m}
+    -3.5,                    !- Vertex 4 X-coordinate {m}
+    8.35999999999998,        !- Vertex 4 Y-coordinate {m}
+    0.5;                     !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    RegTechoCub6Norte,       !- Name
+    Wall,                    !- Surface Type
+    Mortero,                 !- Construction Name
+    TZTechoCub6,             !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    3.5,                     !- Vertex 1 X-coordinate {m}
+    -0.045229018319675,      !- Vertex 1 Y-coordinate {m}
+    0.852401357680561,       !- Vertex 1 Z-coordinate {m}
+    3.5,                     !- Vertex 2 X-coordinate {m}
+    -0.0217166601637183,     !- Vertex 2 Y-coordinate {m}
+    0.553324161936813,       !- Vertex 2 Z-coordinate {m}
+    0,                       !- Vertex 3 X-coordinate {m}
+    -0.0217166601637183,     !- Vertex 3 Y-coordinate {m}
+    0.553324161936813,       !- Vertex 3 Z-coordinate {m}
+    0,                       !- Vertex 4 X-coordinate {m}
+    -0.045229018319675,      !- Vertex 4 Y-coordinate {m}
+    0.852401357680561;       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    RegTechoCub6Sur,         !- Name
+    Wall,                    !- Surface Type
+    Mortero,                 !- Construction Name
+    TZTechoCub6,             !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    -9.07736032978094,       !- Vertex 1 Y-coordinate {m}
+    0.142328141370718,       !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    -9.05384797162499,       !- Vertex 2 Y-coordinate {m}
+    -0.156749054373035,      !- Vertex 2 Z-coordinate {m}
+    3.5,                     !- Vertex 3 X-coordinate {m}
+    -9.05384797162499,       !- Vertex 3 Y-coordinate {m}
+    -0.156749054373035,      !- Vertex 3 Z-coordinate {m}
+    3.5,                     !- Vertex 4 X-coordinate {m}
+    -9.07736032978094,       !- Vertex 4 Y-coordinate {m}
+    0.142328141370718;       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 31,              !- Name
+    Floor,                   !- Surface Type
+    CAD,                     !- Construction Name
+    TZTechoCub6,             !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    3.5,                     !- Vertex 1 X-coordinate {m}
+    -7.05999999999998,       !- Vertex 1 Y-coordinate {m}
+    0,                       !- Vertex 1 Z-coordinate {m}
+    3.5,                     !- Vertex 2 X-coordinate {m}
+    -9.05384797162499,       !- Vertex 2 Y-coordinate {m}
+    -0.156749054373035,      !- Vertex 2 Z-coordinate {m}
+    0,                       !- Vertex 3 X-coordinate {m}
+    -9.05384797162499,       !- Vertex 3 Y-coordinate {m}
+    -0.156749054373035,      !- Vertex 3 Z-coordinate {m}
+    -3.60955709766131e-016,  !- Vertex 4 X-coordinate {m}
+    -7.05999999999998,       !- Vertex 4 Y-coordinate {m}
+    0;                       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 33,              !- Name
+    Wall,                    !- Surface Type
+    Mortero,                 !- Construction Name
+    TZTechoCub6,             !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    Surface 9,               !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    3.5,                     !- Vertex 1 X-coordinate {m}
+    -0.045229018319675,      !- Vertex 1 Y-coordinate {m}
+    0.852401357680561,       !- Vertex 1 Z-coordinate {m}
+    3.5,                     !- Vertex 2 X-coordinate {m}
+    -9.07736032978094,       !- Vertex 2 Y-coordinate {m}
+    0.142328141370718,       !- Vertex 2 Z-coordinate {m}
+    3.5,                     !- Vertex 3 X-coordinate {m}
+    -9.05384797162499,       !- Vertex 3 Y-coordinate {m}
+    -0.156749054373035,      !- Vertex 3 Z-coordinate {m}
+    3.5,                     !- Vertex 4 X-coordinate {m}
+    -0.0217166601637183,     !- Vertex 4 Y-coordinate {m}
+    0.553324161936813;       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 35,              !- Name
+    Wall,                    !- Surface Type
+    Mortero,                 !- Construction Name
+    TZTechoCub6,             !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    Surface 29,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    -0.045229018319675,      !- Vertex 1 Y-coordinate {m}
+    0.852401357680561,       !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    -0.0217166601637183,     !- Vertex 2 Y-coordinate {m}
+    0.553324161936813,       !- Vertex 2 Z-coordinate {m}
+    0,                       !- Vertex 3 X-coordinate {m}
+    -9.05384797162499,       !- Vertex 3 Y-coordinate {m}
+    -0.156749054373035,      !- Vertex 3 Z-coordinate {m}
+    0,                       !- Vertex 4 X-coordinate {m}
+    -9.07736032978094,       !- Vertex 4 Y-coordinate {m}
+    0.142328141370718;       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 36,              !- Name
+    Roof,                    !- Surface Type
+    Mortero,                 !- Construction Name
+    TZTechoCub6,             !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    3.5,                     !- Vertex 1 X-coordinate {m}
+    -9.07736032978094,       !- Vertex 1 Y-coordinate {m}
+    0.142328141370718,       !- Vertex 1 Z-coordinate {m}
+    3.5,                     !- Vertex 2 X-coordinate {m}
+    -0.045229018319675,      !- Vertex 2 Y-coordinate {m}
+    0.852401357680561,       !- Vertex 2 Z-coordinate {m}
+    0,                       !- Vertex 3 X-coordinate {m}
+    -0.045229018319675,      !- Vertex 3 Y-coordinate {m}
+    0.852401357680561,       !- Vertex 3 Z-coordinate {m}
+    0,                       !- Vertex 4 X-coordinate {m}
+    -9.07736032978094,       !- Vertex 4 Y-coordinate {m}
+    0.142328141370718;       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 47,              !- Name
+    Floor,                   !- Surface Type
+    CAD,                     !- Construction Name
+    TZTechoCub6,             !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    3.5,                     !- Vertex 1 X-coordinate {m}
+    -0.0217166601637183,     !- Vertex 1 Y-coordinate {m}
+    0.553324161936813,       !- Vertex 1 Z-coordinate {m}
+    3.5,                     !- Vertex 2 X-coordinate {m}
+    -0.699999999999979,      !- Vertex 2 Y-coordinate {m}
+    0.5,                     !- Vertex 2 Z-coordinate {m}
+    -3.60955709766131e-016,  !- Vertex 3 X-coordinate {m}
+    -0.699999999999979,      !- Vertex 3 Y-coordinate {m}
+    0.5,                     !- Vertex 3 Z-coordinate {m}
+    0,                       !- Vertex 4 X-coordinate {m}
+    -0.0217166601637183,     !- Vertex 4 Y-coordinate {m}
+    0.553324161936813;       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 50,              !- Name
+    Floor,                   !- Surface Type
+    CAD,                     !- Construction Name
+    TZTechoCub6,             !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    Surface 40,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    3.5,                     !- Vertex 1 X-coordinate {m}
+    -0.699999999999979,      !- Vertex 1 Y-coordinate {m}
+    0.5,                     !- Vertex 1 Z-coordinate {m}
+    3.5,                     !- Vertex 2 X-coordinate {m}
+    -7.05999999999998,       !- Vertex 2 Y-coordinate {m}
+    1.79922702440916e-016,   !- Vertex 2 Z-coordinate {m}
+    -3.60955709766131e-016,  !- Vertex 3 X-coordinate {m}
+    -7.05999999999998,       !- Vertex 3 Y-coordinate {m}
+    1.79922702440916e-016,   !- Vertex 3 Z-coordinate {m}
+    -3.60955709766131e-016,  !- Vertex 4 X-coordinate {m}
+    -0.699999999999979,      !- Vertex 4 Y-coordinate {m}
+    0.5;                     !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    RegTechoCub7Norte,       !- Name
+    Wall,                    !- Surface Type
+    Mortero,                 !- Construction Name
+    TZTechoCub7,             !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    9.01477098168033,        !- Vertex 1 Y-coordinate {m}
+    0.852401357680564,       !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    9.03828333983628,        !- Vertex 2 Y-coordinate {m}
+    0.55332416193681,        !- Vertex 2 Z-coordinate {m}
+    -3.5,                    !- Vertex 3 X-coordinate {m}
+    9.03828333983628,        !- Vertex 3 Y-coordinate {m}
+    0.55332416193681,        !- Vertex 3 Z-coordinate {m}
+    -3.5,                    !- Vertex 4 X-coordinate {m}
+    9.01477098168033,        !- Vertex 4 Y-coordinate {m}
+    0.852401357680564;       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    RegTechoCub7Sur,         !- Name
+    Wall,                    !- Surface Type
+    Mortero,                 !- Construction Name
+    TZTechoCub7,             !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    -3.5,                    !- Vertex 1 X-coordinate {m}
+    -0.017360329780962,      !- Vertex 1 Y-coordinate {m}
+    0.142328141370717,       !- Vertex 1 Z-coordinate {m}
+    -3.5,                    !- Vertex 2 X-coordinate {m}
+    0.00615202837499613,     !- Vertex 2 Y-coordinate {m}
+    -0.156749054373035,      !- Vertex 2 Z-coordinate {m}
+    0,                       !- Vertex 3 X-coordinate {m}
+    0.00615202837499613,     !- Vertex 3 Y-coordinate {m}
+    -0.156749054373035,      !- Vertex 3 Z-coordinate {m}
+    0,                       !- Vertex 4 X-coordinate {m}
+    -0.017360329780962,      !- Vertex 4 Y-coordinate {m}
+    0.142328141370717;       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 11,              !- Name
+    Wall,                    !- Surface Type
+    Mortero,                 !- Construction Name
+    TZTechoCub7,             !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    9.01477098168033,        !- Vertex 1 Y-coordinate {m}
+    0.852401357680564,       !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    -0.017360329780962,      !- Vertex 2 Y-coordinate {m}
+    0.142328141370717,       !- Vertex 2 Z-coordinate {m}
+    0,                       !- Vertex 3 X-coordinate {m}
+    0.00615202837499613,     !- Vertex 3 Y-coordinate {m}
+    -0.156749054373035,      !- Vertex 3 Z-coordinate {m}
+    0,                       !- Vertex 4 X-coordinate {m}
+    9.03828333983628,        !- Vertex 4 Y-coordinate {m}
+    0.55332416193681;        !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 12,              !- Name
+    Roof,                    !- Surface Type
+    Mortero,                 !- Construction Name
+    TZTechoCub7,             !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    -0.017360329780962,      !- Vertex 1 Y-coordinate {m}
+    0.142328141370717,       !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    9.01477098168033,        !- Vertex 2 Y-coordinate {m}
+    0.852401357680564,       !- Vertex 2 Z-coordinate {m}
+    -3.5,                    !- Vertex 3 X-coordinate {m}
+    9.01477098168033,        !- Vertex 3 Y-coordinate {m}
+    0.852401357680564,       !- Vertex 3 Z-coordinate {m}
+    -3.5,                    !- Vertex 4 X-coordinate {m}
+    -0.017360329780962,      !- Vertex 4 Y-coordinate {m}
+    0.142328141370717;       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 46,              !- Name
+    Floor,                   !- Surface Type
+    CAD,                     !- Construction Name
+    TZTechoCub7,             !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    9.03828333983628,        !- Vertex 1 Y-coordinate {m}
+    0.55332416193681,        !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    8.36,                    !- Vertex 2 Y-coordinate {m}
+    0.5,                     !- Vertex 2 Z-coordinate {m}
+    -3.5,                    !- Vertex 3 X-coordinate {m}
+    8.36,                    !- Vertex 3 Y-coordinate {m}
+    0.5,                     !- Vertex 3 Z-coordinate {m}
+    -3.5,                    !- Vertex 4 X-coordinate {m}
+    9.03828333983628,        !- Vertex 4 Y-coordinate {m}
+    0.55332416193681;        !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 48,              !- Name
+    Floor,                   !- Surface Type
+    CAD,                     !- Construction Name
+    TZTechoCub7,             !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    Surface 15,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    8.36,                    !- Vertex 1 Y-coordinate {m}
+    0.5,                     !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    2,                       !- Vertex 2 Y-coordinate {m}
+    6.74710134153436e-017,   !- Vertex 2 Z-coordinate {m}
+    -3.5,                    !- Vertex 3 X-coordinate {m}
+    2,                       !- Vertex 3 Y-coordinate {m}
+    6.74710134153436e-017,   !- Vertex 3 Z-coordinate {m}
+    -3.5,                    !- Vertex 4 X-coordinate {m}
+    8.36,                    !- Vertex 4 Y-coordinate {m}
+    0.5;                     !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 7,               !- Name
+    Floor,                   !- Surface Type
+    CAD,                     !- Construction Name
+    TZTechoCub7,             !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    0,                       !- Vertex 1 X-coordinate {m}
+    2,                       !- Vertex 1 Y-coordinate {m}
+    0,                       !- Vertex 1 Z-coordinate {m}
+    0,                       !- Vertex 2 X-coordinate {m}
+    0.00615202837499613,     !- Vertex 2 Y-coordinate {m}
+    -0.156749054373035,      !- Vertex 2 Z-coordinate {m}
+    -3.5,                    !- Vertex 3 X-coordinate {m}
+    0.00615202837499613,     !- Vertex 3 Y-coordinate {m}
+    -0.156749054373035,      !- Vertex 3 Z-coordinate {m}
+    -3.5,                    !- Vertex 4 X-coordinate {m}
+    2,                       !- Vertex 4 Y-coordinate {m}
+    0;                       !- Vertex 4 Z-coordinate {m}
+
+BuildingSurface:Detailed,
+    Surface 9,               !- Name
+    Wall,                    !- Surface Type
+    Mortero,                 !- Construction Name
+    TZTechoCub7,             !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    Surface 33,              !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    ,                        !- View Factor to Ground
+    ,                        !- Number of Vertices
+    -3.5,                    !- Vertex 1 X-coordinate {m}
+    9.01477098168033,        !- Vertex 1 Y-coordinate {m}
+    0.852401357680564,       !- Vertex 1 Z-coordinate {m}
+    -3.5,                    !- Vertex 2 X-coordinate {m}
+    9.03828333983628,        !- Vertex 2 Y-coordinate {m}
+    0.55332416193681,        !- Vertex 2 Z-coordinate {m}
+    -3.5,                    !- Vertex 3 X-coordinate {m}
+    0.00615202837499613,     !- Vertex 3 Y-coordinate {m}
+    -0.156749054373035,      !- Vertex 3 Z-coordinate {m}
+    -3.5,                    !- Vertex 4 X-coordinate {m}
+    -0.017360329780962,      !- Vertex 4 Y-coordinate {m}
+    0.142328141370717;       !- Vertex 4 Z-coordinate {m}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: FENESTRATIONSURFACE:DETAILED ===========
+
+FenestrationSurface:Detailed,
+    VentanaCub5Norte,        !- Name
+    Window,                  !- Surface Type
+    Interior Window,         !- Construction Name
+    ParedCub5Norte,          !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    ,                        !- Multiplier
+    ,                        !- Number of Vertices
+    3.07,                    !- Vertex 1 X-coordinate {m}
+    0,                       !- Vertex 1 Y-coordinate {m}
+    2.99,                    !- Vertex 1 Z-coordinate {m}
+    3.07,                    !- Vertex 2 X-coordinate {m}
+    0,                       !- Vertex 2 Y-coordinate {m}
+    1.11,                    !- Vertex 2 Z-coordinate {m}
+    0.43,                    !- Vertex 3 X-coordinate {m}
+    0,                       !- Vertex 3 Y-coordinate {m}
+    1.11,                    !- Vertex 3 Z-coordinate {m}
+    0.43,                    !- Vertex 4 X-coordinate {m}
+    0,                       !- Vertex 4 Y-coordinate {m}
+    2.99;                    !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    PuertaCub5,              !- Name
+    Window,                  !- Surface Type
+    Interior Window,         !- Construction Name
+    ParedCub5Sur,            !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    ,                        !- Multiplier
+    ,                        !- Number of Vertices
+    0.13,                    !- Vertex 1 X-coordinate {m}
+    -6.36,                   !- Vertex 1 Y-coordinate {m}
+    2.05,                    !- Vertex 1 Z-coordinate {m}
+    0.13,                    !- Vertex 2 X-coordinate {m}
+    -6.36,                   !- Vertex 2 Y-coordinate {m}
+    0.0500000000000002,      !- Vertex 2 Z-coordinate {m}
+    1.03,                    !- Vertex 3 X-coordinate {m}
+    -6.36,                   !- Vertex 3 Y-coordinate {m}
+    0.0500000000000001,      !- Vertex 3 Z-coordinate {m}
+    1.03,                    !- Vertex 4 X-coordinate {m}
+    -6.36,                   !- Vertex 4 Y-coordinate {m}
+    2.05;                    !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    VentanaCub5Sur,          !- Name
+    Window,                  !- Surface Type
+    Interior Window,         !- Construction Name
+    ParedCub5Sur,            !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    ,                        !- Multiplier
+    ,                        !- Number of Vertices
+    1.08,                    !- Vertex 1 X-coordinate {m}
+    -6.36,                   !- Vertex 1 Y-coordinate {m}
+    2.555,                   !- Vertex 1 Z-coordinate {m}
+    1.08,                    !- Vertex 2 X-coordinate {m}
+    -6.36,                   !- Vertex 2 Y-coordinate {m}
+    1.01,                    !- Vertex 2 Z-coordinate {m}
+    3.45,                    !- Vertex 3 X-coordinate {m}
+    -6.36,                   !- Vertex 3 Y-coordinate {m}
+    1.01,                    !- Vertex 3 Z-coordinate {m}
+    3.45,                    !- Vertex 4 X-coordinate {m}
+    -6.36,                   !- Vertex 4 Y-coordinate {m}
+    2.555;                   !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    VentanaCub6Norte,        !- Name
+    Window,                  !- Surface Type
+    Interior Window,         !- Construction Name
+    ParedCub6Norte,          !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    ,                        !- Multiplier
+    ,                        !- Number of Vertices
+    -0.43,                   !- Vertex 1 X-coordinate {m}
+    6.36,                    !- Vertex 1 Y-coordinate {m}
+    2.99,                    !- Vertex 1 Z-coordinate {m}
+    -0.43,                   !- Vertex 2 X-coordinate {m}
+    6.36,                    !- Vertex 2 Y-coordinate {m}
+    1.11,                    !- Vertex 2 Z-coordinate {m}
+    -3.07,                   !- Vertex 3 X-coordinate {m}
+    6.36,                    !- Vertex 3 Y-coordinate {m}
+    1.11,                    !- Vertex 3 Z-coordinate {m}
+    -3.07,                   !- Vertex 4 X-coordinate {m}
+    6.36,                    !- Vertex 4 Y-coordinate {m}
+    2.99;                    !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    PuertaCub6,              !- Name
+    Window,                  !- Surface Type
+    Interior Window,         !- Construction Name
+    ParedCub6Sur,            !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    ,                        !- Multiplier
+    ,                        !- Number of Vertices
+    -1.03,                   !- Vertex 1 X-coordinate {m}
+    0,                       !- Vertex 1 Y-coordinate {m}
+    2.05,                    !- Vertex 1 Z-coordinate {m}
+    -1.03,                   !- Vertex 2 X-coordinate {m}
+    0,                       !- Vertex 2 Y-coordinate {m}
+    0.0499999999999998,      !- Vertex 2 Z-coordinate {m}
+    -0.13,                   !- Vertex 3 X-coordinate {m}
+    0,                       !- Vertex 3 Y-coordinate {m}
+    0.05,                    !- Vertex 3 Z-coordinate {m}
+    -0.13,                   !- Vertex 4 X-coordinate {m}
+    0,                       !- Vertex 4 Y-coordinate {m}
+    2.05;                    !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    VentanaCub6Sur,          !- Name
+    Window,                  !- Surface Type
+    Interior Window,         !- Construction Name
+    ParedCub6Sur,            !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    ,                        !- Multiplier
+    ,                        !- Number of Vertices
+    -3.45,                   !- Vertex 1 X-coordinate {m}
+    0,                       !- Vertex 1 Y-coordinate {m}
+    2.555,                   !- Vertex 1 Z-coordinate {m}
+    -3.45,                   !- Vertex 2 X-coordinate {m}
+    0,                       !- Vertex 2 Y-coordinate {m}
+    1.01,                    !- Vertex 2 Z-coordinate {m}
+    -1.08,                   !- Vertex 3 X-coordinate {m}
+    0,                       !- Vertex 3 Y-coordinate {m}
+    1.01,                    !- Vertex 3 Z-coordinate {m}
+    -1.08,                   !- Vertex 4 X-coordinate {m}
+    0,                       !- Vertex 4 Y-coordinate {m}
+    2.555;                   !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    VentanaCub7Norte,        !- Name
+    Window,                  !- Surface Type
+    Interior Window,         !- Construction Name
+    ParedCub7Norte,          !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    ,                        !- Multiplier
+    ,                        !- Number of Vertices
+    3.07,                    !- Vertex 1 X-coordinate {m}
+    6.36,                    !- Vertex 1 Y-coordinate {m}
+    2.99,                    !- Vertex 1 Z-coordinate {m}
+    3.07,                    !- Vertex 2 X-coordinate {m}
+    6.36,                    !- Vertex 2 Y-coordinate {m}
+    1.11,                    !- Vertex 2 Z-coordinate {m}
+    0.43,                    !- Vertex 3 X-coordinate {m}
+    6.36,                    !- Vertex 3 Y-coordinate {m}
+    1.11,                    !- Vertex 3 Z-coordinate {m}
+    0.43,                    !- Vertex 4 X-coordinate {m}
+    6.36,                    !- Vertex 4 Y-coordinate {m}
+    2.99;                    !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    PuertaCub7Sur,           !- Name
+    Window,                  !- Surface Type
+    Interior Window,         !- Construction Name
+    ParedCub7Sur,            !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    ,                        !- Multiplier
+    ,                        !- Number of Vertices
+    0.13,                    !- Vertex 1 X-coordinate {m}
+    0,                       !- Vertex 1 Y-coordinate {m}
+    2.05,                    !- Vertex 1 Z-coordinate {m}
+    0.13,                    !- Vertex 2 X-coordinate {m}
+    0,                       !- Vertex 2 Y-coordinate {m}
+    0.0499999999999998,      !- Vertex 2 Z-coordinate {m}
+    1.03,                    !- Vertex 3 X-coordinate {m}
+    0,                       !- Vertex 3 Y-coordinate {m}
+    0.05,                    !- Vertex 3 Z-coordinate {m}
+    1.03,                    !- Vertex 4 X-coordinate {m}
+    0,                       !- Vertex 4 Y-coordinate {m}
+    2.05;                    !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    VentCub7Sur,             !- Name
+    Window,                  !- Surface Type
+    Interior Window,         !- Construction Name
+    ParedCub7Sur,            !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    ,                        !- Multiplier
+    ,                        !- Number of Vertices
+    1.08,                    !- Vertex 1 X-coordinate {m}
+    0,                       !- Vertex 1 Y-coordinate {m}
+    2.555,                   !- Vertex 1 Z-coordinate {m}
+    1.08,                    !- Vertex 2 X-coordinate {m}
+    0,                       !- Vertex 2 Y-coordinate {m}
+    1.01,                    !- Vertex 2 Z-coordinate {m}
+    2.77,                    !- Vertex 3 X-coordinate {m}
+    0,                       !- Vertex 3 Y-coordinate {m}
+    1.01,                    !- Vertex 3 Z-coordinate {m}
+    2.77,                    !- Vertex 4 X-coordinate {m}
+    0,                       !- Vertex 4 Y-coordinate {m}
+    2.555;                   !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    VentanaTechoCub5Norte,   !- Name
+    Window,                  !- Surface Type
+    Interior Window,         !- Construction Name
+    RegTechoCub5Norte,       !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    ,                        !- Multiplier
+    ,                        !- Number of Vertices
+    -0.102091193492342,      !- Vertex 1 X-coordinate {m}
+    9.01983332267324,        !- Vertex 1 Y-coordinate {m}
+    0.788008380250423,       !- Vertex 1 Z-coordinate {m}
+    -0.102091193492342,      !- Vertex 2 X-coordinate {m}
+    9.03315699229495,        !- Vertex 2 Y-coordinate {m}
+    0.618531302662296,       !- Vertex 2 Z-coordinate {m}
+    -3.39209119349234,       !- Vertex 3 X-coordinate {m}
+    9.03315699229495,        !- Vertex 3 Y-coordinate {m}
+    0.618531302662296,       !- Vertex 3 Z-coordinate {m}
+    -3.39209119349234,       !- Vertex 4 X-coordinate {m}
+    9.01983332267324,        !- Vertex 4 Y-coordinate {m}
+    0.788008380250423;       !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    VentanaTechoCub5Sur,     !- Name
+    Window,                  !- Surface Type
+    Interior Window,         !- Construction Name
+    Surface 25,              !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    ,                        !- Multiplier
+    ,                        !- Number of Vertices
+    -0.107794317599546,      !- Vertex 1 X-coordinate {m}
+    0.357300043261829,       !- Vertex 1 Y-coordinate {m}
+    -0.129143078359917,      !- Vertex 1 Z-coordinate {m}
+    -0.107794317599545,      !- Vertex 2 X-coordinate {m}
+    0.157915246099328,       !- Vertex 2 Y-coordinate {m}
+    -0.144817983797221,      !- Vertex 2 Z-coordinate {m}
+    -3.25779431759954,       !- Vertex 3 X-coordinate {m}
+    0.15791524609932,        !- Vertex 3 Y-coordinate {m}
+    -0.144817983797221,      !- Vertex 3 Z-coordinate {m}
+    -3.25779431759955,       !- Vertex 4 X-coordinate {m}
+    0.357300043261821,       !- Vertex 4 Y-coordinate {m}
+    -0.129143078359918;      !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    VentanaTechoCub6Norte,   !- Name
+    Window,                  !- Surface Type
+    Interior Window,         !- Construction Name
+    RegTechoCub6Norte,       !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    ,                        !- Multiplier
+    ,                        !- Number of Vertices
+    3.3874895261857,         !- Vertex 1 X-coordinate {m}
+    -0.0408308280872884,     !- Vertex 1 Y-coordinate {m}
+    0.796456377924608,       !- Vertex 1 Z-coordinate {m}
+    3.3874895261857,         !- Vertex 2 X-coordinate {m}
+    -0.0267234131937143,     !- Vertex 2 Y-coordinate {m}
+    0.617010060478357,       !- Vertex 2 Z-coordinate {m}
+    0.0874895261857004,      !- Vertex 3 X-coordinate {m}
+    -0.0267234131937143,     !- Vertex 3 Y-coordinate {m}
+    0.617010060478357,       !- Vertex 3 Z-coordinate {m}
+    0.0874895261857004,      !- Vertex 4 X-coordinate {m}
+    -0.0408308280872884,     !- Vertex 4 Y-coordinate {m}
+    0.796456377924608;       !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    VentanaTechoCub6Sur,     !- Name
+    Window,                  !- Surface Type
+    Interior Window,         !- Construction Name
+    Surface 31,              !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    ,                        !- Multiplier
+    ,                        !- Number of Vertices
+    3.32414167743662,        !- Vertex 1 X-coordinate {m}
+    -8.67744349998872,       !- Vertex 1 Y-coordinate {m}
+    -0.12715750786075,       !- Vertex 1 Z-coordinate {m}
+    3.32414167743662,        !- Vertex 2 X-coordinate {m}
+    -8.87682829715122,       !- Vertex 2 Y-coordinate {m}
+    -0.142832413298053,      !- Vertex 2 Z-coordinate {m}
+    0.174141677436617,       !- Vertex 3 X-coordinate {m}
+    -8.87682829715122,       !- Vertex 3 Y-coordinate {m}
+    -0.142832413298053,      !- Vertex 3 Z-coordinate {m}
+    0.174141677436617,       !- Vertex 4 X-coordinate {m}
+    -8.67744349998872,       !- Vertex 4 Y-coordinate {m}
+    -0.12715750786075;       !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    VentanaTechoCub7Norte,   !- Name
+    Window,                  !- Surface Type
+    Interior Window,         !- Construction Name
+    RegTechoCub7Norte,       !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    ,                        !- Multiplier
+    ,                        !- Number of Vertices
+    -3.37,                   !- Vertex 1 X-coordinate {m}
+    9.01790234897484,        !- Vertex 1 Y-coordinate {m}
+    0.812570365694353,       !- Vertex 1 Z-coordinate {m}
+    -0.129417937781239,      !- Vertex 2 X-coordinate {m}
+    9.01790234897484,        !- Vertex 2 Y-coordinate {m}
+    0.812570365694352,       !- Vertex 2 Z-coordinate {m}
+    -0.129417937781239,      !- Vertex 3 X-coordinate {m}
+    9.03334243606953,        !- Vertex 3 Y-coordinate {m}
+    0.616172457849865,       !- Vertex 3 Z-coordinate {m}
+    -3.37,                   !- Vertex 4 X-coordinate {m}
+    9.03334243606953,        !- Vertex 4 Y-coordinate {m}
+    0.616172457849865;       !- Vertex 4 Z-coordinate {m}
+
+FenestrationSurface:Detailed,
+    VentanaTechoCub7Sur,     !- Name
+    Window,                  !- Surface Type
+    Interior Window,         !- Construction Name
+    Surface 7,               !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    ,                        !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    ,                        !- Multiplier
+    ,                        !- Number of Vertices
+    -0.157167378942874,      !- Vertex 1 X-coordinate {m}
+    0.368572504665032,       !- Vertex 1 Y-coordinate {m}
+    -0.12825687856407,       !- Vertex 1 Z-coordinate {m}
+    -0.157167378942874,      !- Vertex 2 X-coordinate {m}
+    0.169187707502531,       !- Vertex 2 Y-coordinate {m}
+    -0.143931784001373,      !- Vertex 2 Z-coordinate {m}
+    -3.30716737894287,       !- Vertex 3 X-coordinate {m}
+    0.169187707502531,       !- Vertex 3 Y-coordinate {m}
+    -0.143931784001373,      !- Vertex 3 Z-coordinate {m}
+    -3.30716737894287,       !- Vertex 4 X-coordinate {m}
+    0.368572504665032,       !- Vertex 4 Y-coordinate {m}
+    -0.12825687856407;       !- Vertex 4 Z-coordinate {m}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: WINDOWPROPERTY:FRAMEANDDIVIDER ===========
+
+WindowProperty:FrameAndDivider,
+    Window Property Frame And Divider 1,  !- Name
+    0.05081016,              !- Frame Width {m}
+    0.05081016,              !- Frame Outside Projection {m}
+    0.05081016,              !- Frame Inside Projection {m}
+    ,                        !- Frame Conductance {W/m2-K}
+    1,                       !- Ratio of Frame-Edge Glass Conductance to Center-Of-Glass Conductance
+    0.7,                     !- Frame Solar Absorptance
+    0.7,                     !- Frame Visible Absorptance
+    0.9,                     !- Frame Thermal Hemispherical Emissivity
+    DividedLite,             !- Divider Type
+    0,                       !- Divider Width {m}
+    0,                       !- Number of Horizontal Dividers
+    0,                       !- Number of Vertical Dividers
+    0,                       !- Divider Outside Projection {m}
+    0,                       !- Divider Inside Projection {m}
+    0,                       !- Divider Conductance {W/m2-K}
+    1,                       !- Ratio of Divider-Edge Glass Conductance to Center-Of-Glass Conductance
+    0,                       !- Divider Solar Absorptance
+    0,                       !- Divider Visible Absorptance
+    0.9,                     !- Divider Thermal Hemispherical Emissivity
+    0,                       !- Outside Reveal Solar Absorptance
+    0,                       !- Inside Sill Depth {m}
+    0,                       !- Inside Sill Solar Absorptance
+    0,                       !- Inside Reveal Depth {m}
+    0;                       !- Inside Reveal Solar Absorptance
+
+
+!-   ===========  ALL OBJECTS IN CLASS: INTERNALMASS ===========
+
+InternalMass,
+    columnas,                !- Name
+    CAD,                     !- Construction Name
+    Cubs,                    !- Zone or ZoneList Name
+    5.784;                   !- Surface Area {m2}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SHADING:ZONE:DETAILED ===========
+
+Shading:Zone:Detailed,
+    PanelCub5,               !- Name
+    Surface 25,              !- Base Surface Name
+    ,                        !- Transmittance Schedule Name
+    ,                        !- Number of Vertices
+    -1.38879926639504,       !- Vertex 1 X-coordinate {m}
+    1.28354988548593,        !- Vertex 1 Y-coordinate {m}
+    0.499983694863494,       !- Vertex 1 Z-coordinate {m}
+    -1.38879926639504,       !- Vertex 2 X-coordinate {m}
+    3.16175467475668,        !- Vertex 2 Y-coordinate {m}
+    0.646410824006063,       !- Vertex 2 Z-coordinate {m}
+    -2.73189926639504,       !- Vertex 3 X-coordinate {m}
+    3.16175467475668,        !- Vertex 3 Y-coordinate {m}
+    0.646410824006063,       !- Vertex 3 Z-coordinate {m}
+    -2.73189926639504,       !- Vertex 4 X-coordinate {m}
+    1.28354988548593,        !- Vertex 4 Y-coordinate {m}
+    0.499983694863494;       !- Vertex 4 Z-coordinate {m}
+
+Shading:Zone:Detailed,
+    PanelCub6,               !- Name
+    Surface 31,              !- Base Surface Name
+    ,                        !- Transmittance Schedule Name
+    ,                        !- Number of Vertices
+    0.50473862258776,        !- Vertex 1 X-coordinate {m}
+    -1.60779475483284,       !- Vertex 1 Y-coordinate {m}
+    1.23053967001985,        !- Vertex 1 Z-coordinate {m}
+    0.50473862258776,        !- Vertex 2 X-coordinate {m}
+    -7.45535208601467,       !- Vertex 2 Y-coordinate {m}
+    0.278492311478129,       !- Vertex 2 Z-coordinate {m}
+    3.13608262258776,        !- Vertex 3 X-coordinate {m}
+    -7.45535208601467,       !- Vertex 3 Y-coordinate {m}
+    0.278492311478129,       !- Vertex 3 Z-coordinate {m}
+    3.13608262258776,        !- Vertex 4 X-coordinate {m}
+    -1.60779475483284,       !- Vertex 4 Y-coordinate {m}
+    1.23053967001985;        !- Vertex 4 Z-coordinate {m}
+
+Shading:Zone:Detailed,
+    PanelCub7,               !- Name
+    Surface 7,               !- Base Surface Name
+    ,                        !- Transmittance Schedule Name
+    ,                        !- Number of Vertices
+    -3.49442889013569,       !- Vertex 1 X-coordinate {m}
+    7.4209031465729,         !- Vertex 1 Y-coordinate {m}
+    1.18276678365592,        !- Vertex 1 Z-coordinate {m}
+    -3.49442889013569,       !- Vertex 2 X-coordinate {m}
+    1.62478709305899,        !- Vertex 2 Y-coordinate {m}
+    0.271427781531089,       !- Vertex 2 Z-coordinate {m}
+    -0.90339773100489,       !- Vertex 3 X-coordinate {m}
+    1.62478709305899,        !- Vertex 3 Y-coordinate {m}
+    0.271427781531089,       !- Vertex 3 Z-coordinate {m}
+    -0.90339773100489,       !- Vertex 4 X-coordinate {m}
+    7.4209031465729,         !- Vertex 4 Y-coordinate {m}
+    1.18276678365592;        !- Vertex 4 Z-coordinate {m}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: PEOPLE ===========
+
+People,
+    persona,                 !- Name
+    Cubs,                    !- Zone or ZoneList Name
+    jorge,                   !- Number of People Schedule Name
+    People,                  !- Number of People Calculation Method
+    2,                       !- Number of People
+    ,                        !- People per Zone Floor Area {person/m2}
+    ,                        !- Zone Floor Area per Person {m2/person}
+    0.3,                     !- Fraction Radiant
+    autocalculate,           !- Sensible Heat Fraction
+    actividad,               !- Activity Level Schedule Name
+    0.0000000382,            !- Carbon Dioxide Generation Rate {m3/s-W}
+    No,                      !- Enable ASHRAE 55 Comfort Warnings
+    ZoneAveraged,            !- Mean Radiant Temperature Calculation Type
+    ,                        !- Surface Name/Angle Factor List Name
+    ,                        !- Work Efficiency Schedule Name
+    ClothingInsulationSchedule;  !- Clothing Insulation Calculation Method
+
+
+!-   ===========  ALL OBJECTS IN CLASS: ELECTRICEQUIPMENT ===========
+
+ElectricEquipment,
+    impresoracpu,            !- Name
+    Cubs,                    !- Zone or ZoneList Name
+    horarioequipo1,          !- Schedule Name
+    EquipmentLevel,          !- Design Level Calculation Method
+    364,                     !- Design Level {W}
+    ,                        !- Watts per Zone Floor Area {W/m2}
+    ,                        !- Watts per Person {W/person}
+    ,                        !- Fraction Latent
+    0.1,                     !- Fraction Radiant
+    ,                        !- Fraction Lost
+    General;                 !- End-Use Subcategory
+
+ElectricEquipment,
+    compu,                   !- Name
+    Cubs,                    !- Zone or ZoneList Name
+    horarioequipo2,          !- Schedule Name
+    EquipmentLevel,          !- Design Level Calculation Method
+    166,                     !- Design Level {W}
+    ,                        !- Watts per Zone Floor Area {W/m2}
+    ,                        !- Watts per Person {W/person}
+    ,                        !- Fraction Latent
+    0.2,                     !- Fraction Radiant
+    ,                        !- Fraction Lost
+    General;                 !- End-Use Subcategory
+
+ElectricEquipment,
+    telagireg,               !- Name
+    Cubs,                    !- Zone or ZoneList Name
+    horarioequipo3,          !- Schedule Name
+    EquipmentLevel,          !- Design Level Calculation Method
+    31.5,                    !- Design Level {W}
+    ,                        !- Watts per Zone Floor Area {W/m2}
+    ,                        !- Watts per Person {W/person}
+    ,                        !- Fraction Latent
+    ,                        !- Fraction Radiant
+    ,                        !- Fraction Lost
+    General;                 !- End-Use Subcategory
+
+ElectricEquipment,
+    monitor,                 !- Name
+    Cubs,                    !- Zone or ZoneList Name
+    horarioequipo4,          !- Schedule Name
+    EquipmentLevel,          !- Design Level Calculation Method
+    43,                      !- Design Level {W}
+    ,                        !- Watts per Zone Floor Area {W/m2}
+    ,                        !- Watts per Person {W/person}
+    ,                        !- Fraction Latent
+    0.35,                    !- Fraction Radiant
+    ,                        !- Fraction Lost
+    General;                 !- End-Use Subcategory
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRFLOWNETWORK:SIMULATIONCONTROL ===========
+
+AirflowNetwork:SimulationControl,
+    Cub7,                    !- Name
+    MultizoneWithoutDistribution,  !- AirflowNetwork Control
+    SurfaceAverageCalculation,  !- Wind Pressure Coefficient Type
+    ,                        !- Height Selection for Local Wind Pressure Calculation
+    LowRise,                 !- Building Type
+    500,                     !- Maximum Number of Iterations {dimensionless}
+    ZeroNodePressures,       !- Initialization Type
+    0.0001,                  !- Relative Airflow Convergence Tolerance {dimensionless}
+    0.000001,                !- Absolute Airflow Convergence Tolerance {kg/s}
+    -.5,                     !- Convergence Acceleration Limit {dimensionless}
+    6,                       !- Azimuth Angle of Long Axis of Building {deg}
+    1,                       !- Ratio of Building Width Along Short Axis to Width Along Long Axis
+    No,                      !- Height Dependence of External Node Temperature
+    SkylineLU;               !- Solver
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRFLOWNETWORK:MULTIZONE:ZONE ===========
+
+AirflowNetwork:MultiZone:Zone,
+    TZCub7,                  !- Zone Name
+    NoVent,                  !- Ventilation Control Mode
+    ,                        !- Ventilation Control Zone Temperature Setpoint Schedule Name
+    ,                        !- Minimum Venting Open Factor {dimensionless}
+    ,                        !- Indoor and Outdoor Temperature Difference Lower Limit For Maximum Venting Open Factor {deltaC}
+    100,                     !- Indoor and Outdoor Temperature Difference Upper Limit for Minimum Venting Open Factor {deltaC}
+    ,                        !- Indoor and Outdoor Enthalpy Difference Lower Limit For Maximum Venting Open Factor {deltaJ/kg}
+    300000,                  !- Indoor and Outdoor Enthalpy Difference Upper Limit for Minimum Venting Open Factor {deltaJ/kg}
+    ,                        !- Venting Availability Schedule Name
+    Standard,                !- Single Sided Wind Pressure Coefficient Algorithm
+    10.5;                    !- Facade Width {m}
+
+AirflowNetwork:MultiZone:Zone,
+    TZTechoCub7,             !- Zone Name
+    NoVent,                  !- Ventilation Control Mode
+    ,                        !- Ventilation Control Zone Temperature Setpoint Schedule Name
+    ,                        !- Minimum Venting Open Factor {dimensionless}
+    ,                        !- Indoor and Outdoor Temperature Difference Lower Limit For Maximum Venting Open Factor {deltaC}
+    100,                     !- Indoor and Outdoor Temperature Difference Upper Limit for Minimum Venting Open Factor {deltaC}
+    ,                        !- Indoor and Outdoor Enthalpy Difference Lower Limit For Maximum Venting Open Factor {deltaJ/kg}
+    300000,                  !- Indoor and Outdoor Enthalpy Difference Upper Limit for Minimum Venting Open Factor {deltaJ/kg}
+    ,                        !- Venting Availability Schedule Name
+    Standard,                !- Single Sided Wind Pressure Coefficient Algorithm
+    10.5;                    !- Facade Width {m}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRFLOWNETWORK:MULTIZONE:SURFACE ===========
+
+AirflowNetwork:MultiZone:Surface,
+    VentanaCub7Norte,        !- Surface Name
+    infCubiculo,             !- Leakage Component Name
+    ,                        !- External Node Name
+    1,                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+    ZoneLevel,               !- Ventilation Control Mode
+    ,                        !- Ventilation Control Zone Temperature Setpoint Schedule Name
+    ,                        !- Minimum Venting Open Factor {dimensionless}
+    ,                        !- Indoor and Outdoor Temperature Difference Lower Limit For Maximum Venting Open Factor {deltaC}
+    100,                     !- Indoor and Outdoor Temperature Difference Upper Limit for Minimum Venting Open Factor {deltaC}
+    ,                        !- Indoor and Outdoor Enthalpy Difference Lower Limit For Maximum Venting Open Factor {deltaJ/kg}
+    300000,                  !- Indoor and Outdoor Enthalpy Difference Upper Limit for Minimum Venting Open Factor {deltaJ/kg}
+    ,                        !- Venting Availability Schedule Name
+    ,                        !- Occupant Ventilation Control Name
+    PolygonHeight,           !- Equivalent Rectangle Method
+    1;                       !- Equivalent Rectangle Aspect Ratio {dimensionless}
+
+AirflowNetwork:MultiZone:Surface,
+    VentCub7Sur,             !- Surface Name
+    infCubiculo,             !- Leakage Component Name
+    ,                        !- External Node Name
+    1,                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+    ZoneLevel,               !- Ventilation Control Mode
+    ,                        !- Ventilation Control Zone Temperature Setpoint Schedule Name
+    ,                        !- Minimum Venting Open Factor {dimensionless}
+    ,                        !- Indoor and Outdoor Temperature Difference Lower Limit For Maximum Venting Open Factor {deltaC}
+    100,                     !- Indoor and Outdoor Temperature Difference Upper Limit for Minimum Venting Open Factor {deltaC}
+    ,                        !- Indoor and Outdoor Enthalpy Difference Lower Limit For Maximum Venting Open Factor {deltaJ/kg}
+    300000,                  !- Indoor and Outdoor Enthalpy Difference Upper Limit for Minimum Venting Open Factor {deltaJ/kg}
+    ,                        !- Venting Availability Schedule Name
+    ,                        !- Occupant Ventilation Control Name
+    PolygonHeight,           !- Equivalent Rectangle Method
+    1;                       !- Equivalent Rectangle Aspect Ratio {dimensionless}
+
+AirflowNetwork:MultiZone:Surface,
+    PuertaCub7Sur,           !- Surface Name
+    infCubiculo,             !- Leakage Component Name
+    ,                        !- External Node Name
+    1,                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+    ZoneLevel,               !- Ventilation Control Mode
+    ,                        !- Ventilation Control Zone Temperature Setpoint Schedule Name
+    ,                        !- Minimum Venting Open Factor {dimensionless}
+    ,                        !- Indoor and Outdoor Temperature Difference Lower Limit For Maximum Venting Open Factor {deltaC}
+    100,                     !- Indoor and Outdoor Temperature Difference Upper Limit for Minimum Venting Open Factor {deltaC}
+    ,                        !- Indoor and Outdoor Enthalpy Difference Lower Limit For Maximum Venting Open Factor {deltaJ/kg}
+    300000,                  !- Indoor and Outdoor Enthalpy Difference Upper Limit for Minimum Venting Open Factor {deltaJ/kg}
+    ,                        !- Venting Availability Schedule Name
+    ,                        !- Occupant Ventilation Control Name
+    PolygonHeight,           !- Equivalent Rectangle Method
+    1;                       !- Equivalent Rectangle Aspect Ratio {dimensionless}
+
+AirflowNetwork:MultiZone:Surface,
+    VentanaTechoCub7Sur,     !- Surface Name
+    infTecho,                !- Leakage Component Name
+    ,                        !- External Node Name
+    1,                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+    ZoneLevel,               !- Ventilation Control Mode
+    ,                        !- Ventilation Control Zone Temperature Setpoint Schedule Name
+    ,                        !- Minimum Venting Open Factor {dimensionless}
+    ,                        !- Indoor and Outdoor Temperature Difference Lower Limit For Maximum Venting Open Factor {deltaC}
+    100,                     !- Indoor and Outdoor Temperature Difference Upper Limit for Minimum Venting Open Factor {deltaC}
+    ,                        !- Indoor and Outdoor Enthalpy Difference Lower Limit For Maximum Venting Open Factor {deltaJ/kg}
+    300000,                  !- Indoor and Outdoor Enthalpy Difference Upper Limit for Minimum Venting Open Factor {deltaJ/kg}
+    ,                        !- Venting Availability Schedule Name
+    ,                        !- Occupant Ventilation Control Name
+    PolygonHeight,           !- Equivalent Rectangle Method
+    1;                       !- Equivalent Rectangle Aspect Ratio {dimensionless}
+
+AirflowNetwork:MultiZone:Surface,
+    VentanaTechoCub7Norte,   !- Surface Name
+    infTecho,                !- Leakage Component Name
+    ,                        !- External Node Name
+    1,                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+    ZoneLevel,               !- Ventilation Control Mode
+    ,                        !- Ventilation Control Zone Temperature Setpoint Schedule Name
+    ,                        !- Minimum Venting Open Factor {dimensionless}
+    ,                        !- Indoor and Outdoor Temperature Difference Lower Limit For Maximum Venting Open Factor {deltaC}
+    100,                     !- Indoor and Outdoor Temperature Difference Upper Limit for Minimum Venting Open Factor {deltaC}
+    ,                        !- Indoor and Outdoor Enthalpy Difference Lower Limit For Maximum Venting Open Factor {deltaJ/kg}
+    300000,                  !- Indoor and Outdoor Enthalpy Difference Upper Limit for Minimum Venting Open Factor {deltaJ/kg}
+    ,                        !- Venting Availability Schedule Name
+    ,                        !- Occupant Ventilation Control Name
+    PolygonHeight,           !- Equivalent Rectangle Method
+    1;                       !- Equivalent Rectangle Aspect Ratio {dimensionless}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRFLOWNETWORK:MULTIZONE:REFERENCECRACKCONDITIONS ===========
+
+AirflowNetwork:MultiZone:ReferenceCrackConditions,
+    inf,                     !- Name
+    20,                      !- Reference Temperature {C}
+    86864,                   !- Reference Barometric Pressure {Pa}
+    0;                       !- Reference Humidity Ratio {kgWater/kgDryAir}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: AIRFLOWNETWORK:MULTIZONE:SURFACE:CRACK ===========
+
+AirflowNetwork:MultiZone:Surface:Crack,
+    infTecho,                !- Name
+    0.5,                     !- Air Mass Flow Coefficient at Reference Conditions {kg/s}
+    0.65,                    !- Air Mass Flow Exponent {dimensionless}
+    inf;                     !- Reference Crack Conditions
+
+AirflowNetwork:MultiZone:Surface:Crack,
+    infCubiculo,             !- Name
+    0.0375,                  !- Air Mass Flow Coefficient at Reference Conditions {kg/s}
+    0.65,                    !- Air Mass Flow Exponent {dimensionless}
+    inf;                     !- Reference Crack Conditions
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SIZING:PARAMETERS ===========
+
+Sizing:Parameters,
+    1.25,                    !- Heating Sizing Factor
+    1.15;                    !- Cooling Sizing Factor
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTDOORAIR:NODE ===========
+
+OutdoorAir:Node,
+    Model Outdoor Air Node;  !- Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:VARIABLEDICTIONARY ===========
+
+Output:VariableDictionary,
+    IDF,                     !- Key Field
+    Unsorted;                !- Sort Option
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:TABLE:SUMMARYREPORTS ===========
+
+Output:Table:SummaryReports,
+    AllSummary;              !- Report 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUTCONTROL:TABLE:STYLE ===========
+
+OutputControl:Table:Style,
+    HTML;                    !- Column Separator
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:VARIABLE ===========
+
+Output:Variable,
+    *,                       !- Key Value
+    Site Outdoor Air Drybulb Temperature,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Zone Mean Air Temperature,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:SQLITE ===========
+
+Output:SQLite,
+    SimpleAndTabular;        !- Option Type
+
